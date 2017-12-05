@@ -57,19 +57,19 @@
 
             div {
 
-            	border: 1px black solid;
+            	bor/der: 1px black solid;
             }
 
             #form1{
 
-            	width: 300px;
-            	text-align: center;
+            	width: 350px;
+            	te/xt-align: center;
             	margin: auto;
             }
 
             .bigger {
 
-            	float;right;
+            	float:right;
             }
         </style>
 </head>
@@ -101,7 +101,7 @@
 		            </div>
 		        </div>
 
-	 <div class="content">
+	 <div cla/ss="content">
 
 	<div id="form1">
 										
@@ -109,7 +109,7 @@
 
 										
 		<form method="post" action="user/purchase">
-					<select id="totheright">
+					<select id="totheright" class="bigger">
 					  <option  value="Doctor">Doctor</option>
 					  <option value="Miss">Miss</option>
 					  <option  value="Mrs">Mrs</option>
@@ -125,7 +125,7 @@
 					<label>Quantity &#58; </label> <input class="bigger" type="number" name="quantity" min="1" max="5" /><br /><br />
 					<input type="reset" id="resetbuttonid" style="display:none;">
 
-					<img 
+					<!-- <img 
 						 class="totheright"
 					   src="images/reset.png" 
 					   width="68" 
@@ -133,7 +133,11 @@
 					   alt="reset the form" 
 					   title="Click to reset the form."
 					   onclick="document.getElementById('resetbuttonid').click()">
-					<input class="totheright1" type="image" src="images/send.png" alt="Submit" width="68" height="28"  />
+					<input class="totheright1" type="image" src="images/send.png" alt="Submit" width="68" height="28"  /> -->
+
+					<button type="submit" class="btn btn-primary">
+                                    Purchase
+                                </button>
 		</form>
 
 	</div><!--end of form tag -->
