@@ -65,7 +65,7 @@
                                     </li>
                                     <li>
 
-                                        <a href="{{ route('accounts') }}">My Account</a>
+                                        <a href="{{ route('user/accounts') }}">My Account</a>
 
                                     </li>
                                 </ul>
