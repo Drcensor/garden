@@ -88,7 +88,7 @@
         	 <div class="content">
 
 		            <div class="links">
-		                    <a href="#">form to order</a>
+		                    <a href="{{ route('user/form1') }}">form to order</a>
 		                    <a href="#">page to edit</a>
 		                    <a href="https://laravel-news.com">News</a>
 		                    <a href="https://forge.laravel.com">Forge</a>

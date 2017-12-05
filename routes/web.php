@@ -20,3 +20,5 @@ Auth::routes();
 Route::get('user', 'HomeController@index')->name('user');
 
 Route::get('user/accounts', 'HomeController@show')->name('user/accounts');
+
+Route::get('user/form1', 'QueryController@index')->name('user/form1');
