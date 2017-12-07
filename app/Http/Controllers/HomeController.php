@@ -44,19 +44,7 @@ class HomeController extends Controller
 
          $purchase = DB::table('purchase')->where('users_id', '=', auth()->id())->latest()->get();
 
+        return view('accounts', ['users' => $users], ['purchase' => $purchase]);
 
-
-        $quantity = DB::table('purchase')->select(DB::raw('sum(purchase.quantity*purchase.price) AS total_sales'))->where('users_id', '=', auth()->id())->get();
-         $price = DB::table('purchase')->select('price',  'quantity')->where('users_id', '=', auth()->id())->get();
-
-         $total_sales = 'total_sales';
-        // $int = intval($quantity );
-        // $int2 = intval( $price );
-        // $total = $int * $int2;
-
-        return view('accounts', ['users' => $users], ['purchase' => $purchase],['purchase.quantity' => $quantity], ['purchase.price' => $price], ['total_sales' => $total_sales]);
-
-
-        //return view('accounts');
     }
 }

@@ -104,7 +104,7 @@
 	                	<strong>First name: </strong>{{$users = Auth::user()->firstname}}<br />
 	                    <strong>Last name:  </strong> {{$users = Auth::user()->lastname}}<br />
 	                    <strong>Email:      </strong>{{$users = Auth::user()->email}}<br />
-	                    <strong>Created on: </strong>{{$users = Auth::user()->created_at}}<br />
+	                    <strong>Created on: </strong>{{$users = date('d-m-Y', strtotime(Auth::user()->created_at)) }}<br />
 	                </div>
 
 
@@ -117,11 +117,13 @@
                              @foreach($purchase as $pur)
                         
                                          <li>
-                                                  your ID:{{ $pur->users_id}}<br />  
+                                                 
                                                   Plant Name:{{ $pur->plant  }}<br />
                                                   Quantity of plants: {{ $pur->quantity}}<br />
-                                                  Price  of Plant: £ {{ $pur->price}}<br />    
-                                                  purchased on: {{ $pur->created_at }}<br /> <br />
+                                                  Price  of Plant: £ {{ number_format($pur->price, 2)}}<br />    
+                                                  purchased on: {{ date('d-m-Y', strtotime( $pur->created_at)) }}<br /> 
+                                                  Total cost of Plants:£ {{ number_format($pur->quantity * $pur->price, 2) }}<br /><br />
+
                                         </li>
 
                          @endforeach

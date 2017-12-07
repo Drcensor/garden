@@ -100,11 +100,13 @@
                              @foreach($purchase as $pur)
                         
                          <li>
-                          your ID:{{ $pur->users_id}}<br />  
-                          Plant Name:{{ $pur->plant  }}<br />
-                          Quantity of plants: {{ $pur->quantity}}<br />
-                          Price  of Plant: £ {{ $pur->price}}<br />
-                          purchased on: {{ $pur->created_at}}<br /> <br />
+                                                  your ID:{{ $pur->users_id}}<br />  
+                                                  Plant Name:{{ $pur->plant  }}<br />
+                                                  Quantity of plants: {{ $pur->quantity}}<br />
+                                                  Price  of Plant: £ {{ number_format($pur->price, 2)}}<br />    
+                                                  purchased on: {{ date('d-m-Y', strtotime( $pur->created_at)) }}<br /> 
+                                                  Total cost of Plants:£ {{ number_format($pur->quantity * $pur->price, 2) }}
+
                         </li>
 
                          @endforeach
