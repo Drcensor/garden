@@ -91,7 +91,27 @@
 
          <div class="content">
              
-            <?php  echo  'hello and thanks'; ?>
+                     <div class="links">
+
+                          <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
+                           
+                         <ul>
+                             
+                             @foreach($purchase as $pur)
+                        
+                         <li>
+                          your ID:{{ $pur->users_id}}<br />  
+                          Plant Name:{{ $pur->plant  }}<br />
+                          Quantity of plants: {{ $pur->quantity}}<br />
+                          Price  of Plant: £ {{ $pur->price}}<br />
+                          purchased on: {{ $pur->created_at}}<br /> <br />
+                        </li>
+
+                         @endforeach
+
+                           </ul>
+                       
+                    </div>
          </div>
 
     </body>

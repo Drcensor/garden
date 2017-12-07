@@ -7,7 +7,7 @@
 
         <title>{{ config('app.name', 'Garden') }}</title>
 
-        <!-- Fonts -->
+        <!-- Fonts 
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -106,6 +106,31 @@
 	                    <strong>Email:      </strong>{{$users = Auth::user()->email}}<br />
 	                    <strong>Created on: </strong>{{$users = Auth::user()->created_at}}<br />
 	                </div>
+
+
+                     <div class="links">
+
+                          <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
+                           
+                         <ul>
+                             
+                             @foreach($purchase as $pur)
+                        
+                                         <li>
+                                                  your ID:{{ $pur->users_id}}<br />  
+                                                  Plant Name:{{ $pur->plant  }}<br />
+                                                  Quantity of plants: {{ $pur->quantity}}<br />
+                                                  Price  of Plant: £ {{ $pur->price}}<br />    
+                                                  purchased on: {{ $pur->created_at }}<br /> <br />
+                                        </li>
+
+                         @endforeach
+
+                       
+
+                           </ul>
+                       
+                    </div>
 
             </div><!-- end of content-->
         

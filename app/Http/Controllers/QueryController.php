@@ -8,7 +8,11 @@ use App\Http\Controllers\Auth;
 
 use App\User;
 
+use App\Purchase;
+
 use DB;
+
+use Carbon\Carbon;
 
 class QueryController extends Controller
 {
@@ -18,19 +22,20 @@ class QueryController extends Controller
     }
 
 
-    public function index()
+    public function index($purchase)
     {
-        return view('thankyou');
+        $purchase = DB::table('purchase')->get();
+         return view('thankyou', ['purchase' => $purchase]);
     }
 
-    public function show()
-    {
+    // public function show()
+    // {
 
-        $users = DB::table('users')->get();
+    //     $users = DB::table('users')->get();
 
-        return view('accounts', ['users' => $users]);
+    //     return view('accounts', ['users' => $users]);
 
-    }
+    // }
 
 
     //  public function create()
@@ -43,18 +48,25 @@ class QueryController extends Controller
       public function create()
     {
 
-        DB::table('purchase')->insert(
+        $purchase = DB::table('purchase')->insert(
              [
                 'users_id' => auth()->id(),
                  'plant' => request('plant'),
                 'quantity' => request('quantity'),
                 'price' => request('price')
 
+
              ]);
 
-        return view('thankyou');
+         $purchase = DB::table('purchase')->where('users_id', '=', auth()->id())->latest()->get();
+
+
+
+        return view('thankyou', ['purchase' => $purchase]);
 
     }
+
+
 
 
 
