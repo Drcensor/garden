@@ -1,17 +1,9 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>purchase</title>
 
-        <title>{{ config('app.name', 'Garden') }}</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
+	<style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -67,10 +59,23 @@
 
             	bor/der: 1px black solid;
             }
+
+            #form1{
+
+            	width: 350px;
+            	te/xt-align: center;
+            	margin: auto;
+            }
+
+            .bigger {
+
+            	float:right;
+            }
         </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+</head>
+<body>
+
+	 <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -84,30 +89,10 @@
 
         </div>
 
+         <div class="content">
+             
+            <?php  echo  'hello and thanks'; ?>
+         </div>
 
-        	 <div class="content">
-
-		             @include ('../partials/nav')
-
-           
-	                <div class="title m-b-md">
-	                   {{ config('app.name', 'Garden') }}<br />
-
-
-	                </div>
-
-
-	                <div class="links">
-
-	                	  <h1>Your Accounts Information</h1>
-
-	                	<strong>First name: </strong>{{$users = Auth::user()->firstname}}<br />
-	                    <strong>Last name:  </strong> {{$users = Auth::user()->lastname}}<br />
-	                    <strong>Email:      </strong>{{$users = Auth::user()->email}}<br />
-	                    <strong>Created on: </strong>{{$users = Auth::user()->created_at}}<br />
-	                </div>
-
-            </div><!-- end of content-->
-        
     </body>
-</html>
+    </html>

@@ -92,48 +92,35 @@
 
         	 <div class="content">
 
-		            <div class="links">
-		                    <a href="{{ route('user/form1') }}">form to order</a>
-		                    <a href="#">page to edit</a>
-		                    <a href="https://laravel-news.com">News</a>
-		                    <a href="https://forge.laravel.com">Forge</a>
-		                    <a href="https://github.com/laravel/laravel">GitHub</a>
-		            </div>
+		             @include ('partials/nav')
 		        </div>
 
 	 <div cla/ss="content">
+
+
+	 	
 
 	<div id="form1">
 										
 										<h3>Please fill in the Form</h3>
 
 										
-		<form method="post" action="user/purchase">
-					<select id="totheright" class="bigger">
-					  <option  value="Doctor">Doctor</option>
-					  <option value="Miss">Miss</option>
-					  <option  value="Mrs">Mrs</option>
-					  <option  value="Mr" selected>Mr</option>
-					</select><br /><br />
-					<label>first Name &#58;</label><input class="bigger"  type="text" name="fname" value="name" onclick="this.value='';"/><br /><br />
-					<label>Last Name &#58;</label><input class="bigger" type="text" name="lname" value="name" onclick="this.value='';"/><br /><br />
 
-					<label>Mobile or Home phone &#58;</label><input class="bigger" type="text" name="phone" value="phone number" onclick="this.value='';"/><br /><br />
-					<label>Email &#58;</label><input class="bigger" type="text" name="email" value="Email" onclick="this.value='';"/><br /><br />
-					<label>Plant Name &#58;</label><input class="bigger" type="text" name="pcode" value="Plant Name" onclick="this.value='';"/><br /><br />
-					<label>Plant Code &#58;</label><input class="bigger" type="text" name="pcode" value="Plant Code" onclick="this.value='';"/><br /><br />
-					<label>Quantity &#58; </label> <input class="bigger" type="number" name="quantity" min="1" max="5" /><br /><br />
+
+		<form method="post" action="../user/thankyou ">
+
+				{{csrf_field()}}
+
+
+                    <label>Plant Name &#58;<input class="bigger" type="text" name="plant" value="Pointsettia" onclick="this.value='';"/><br /><br />
+
+
+					<label>Quantity &#58; </label> <input class="bigger" type="number" name="quantity" min="0" max="5" value="0"/><br /><br />
+
+					<label>Plant Price &#58;</label><input class="bigger" type="text" name="price" value="4.99" onclick="this.value='';"/><br /><br />
 					<input type="reset" id="resetbuttonid" style="display:none;">
 
-					<!-- <img 
-						 class="totheright"
-					   src="images/reset.png" 
-					   width="68" 
-					   height="28" 
-					   alt="reset the form" 
-					   title="Click to reset the form."
-					   onclick="document.getElementById('resetbuttonid').click()">
-					<input class="totheright1" type="image" src="images/send.png" alt="Submit" width="68" height="28"  /> -->
+					
 
 					<button type="submit" class="btn btn-primary">
                                     Purchase

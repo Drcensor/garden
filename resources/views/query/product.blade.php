@@ -84,30 +84,6 @@
 
         </div>
 
-
-        	 <div class="content">
-
-		             @include ('../partials/nav')
-
-           
-	                <div class="title m-b-md">
-	                   {{ config('app.name', 'Garden') }}<br />
-
-
-	                </div>
-
-
-	                <div class="links">
-
-	                	  <h1>Your Accounts Information</h1>
-
-	                	<strong>First name: </strong>{{$users = Auth::user()->firstname}}<br />
-	                    <strong>Last name:  </strong> {{$users = Auth::user()->lastname}}<br />
-	                    <strong>Email:      </strong>{{$users = Auth::user()->email}}<br />
-	                    <strong>Created on: </strong>{{$users = Auth::user()->created_at}}<br />
-	                </div>
-
-            </div><!-- end of content-->
-        
-    </body>
+      @include ('partials/nav')
+</body>
 </html>

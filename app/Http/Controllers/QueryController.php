@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Auth;
+
+use App\User;
+
+use DB;
+
 class QueryController extends Controller
 {
     public function __construct()
@@ -14,7 +20,7 @@ class QueryController extends Controller
 
     public function index()
     {
-        return view('query.form1');
+        return view('thankyou');
     }
 
     public function show()
@@ -24,8 +30,30 @@ class QueryController extends Controller
 
         return view('accounts', ['users' => $users]);
 
+    }
 
-        //return view('accounts');
+
+    //  public function create()
+    // {
+       
+    //     return view('query.product');
+
+    //  }
+
+      public function create()
+    {
+
+        DB::table('purchase')->insert(
+             [
+                'users_id' => auth()->id(),
+                 'plant' => request('plant'),
+                'quantity' => request('quantity'),
+                'price' => request('price')
+
+             ]);
+
+        return view('thankyou');
+
     }
 
 

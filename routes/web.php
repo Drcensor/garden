@@ -21,4 +21,10 @@ Route::get('user', 'HomeController@index')->name('user');
 
 Route::get('user/accounts', 'HomeController@show')->name('user/accounts');
 
-Route::get('user/form1', 'QueryController@index')->name('user/form1');
+Route::get('user/form1', 'ProductController@index')->name('user/form1');
+
+Route::get('user/product', 'ProductController@link')->name('user/product');
+
+Route::post('user/thankyou', 'QueryController@create')->name('user/thankyou');
+
+
