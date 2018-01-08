@@ -4,8 +4,6 @@
 @section('style')
 
    <style>
-           
-
             div {
 
                 bor/der: 1px black solid;
@@ -16,16 +14,11 @@
                 margin: auto;
             }
             .footer {
-
-                min-height: 200px;
+               min-height: 200px;
             }
-        </style>
+     </style>
 
 @endsection
-
-
-
-
 
 @section('content')
 
