@@ -11,6 +11,11 @@
                 height: 100vh;
             }
 
+            .full-heights {
+                height: 70px;
+            }
+
+
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -47,4 +52,7 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+            }
+            .media1 {
+                float:right;
             }

@@ -14,22 +14,14 @@
         <!-- Styles -->
         @yield('style')
 
-        
+
     </head>
     <body>
         @include('partials.auth')
 
-        @yield('content')
+         @yield('content')
 
-
-
-       
-           
-
-               
-
-                             
-            </div>
-        </div>
+         @yield('footer')
+                                       
     </body>
 </html>

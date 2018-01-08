@@ -1,4 +1,4 @@
-
+</div>
 
  <div class="content">
  					 @include ('partials/header')

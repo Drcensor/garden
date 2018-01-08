@@ -14,7 +14,7 @@
                 margin: auto;
             }
             .footer {
-               min-height: 200px;
+               min-height: 100px;
             }
      </style>
 
@@ -25,6 +25,15 @@
     @include('partials.accountscontents')
 
 @endsection
+
+
+@section('footer')
+
+    @include('partials.footer')
+
+@endsection
+
+
 
 
 
