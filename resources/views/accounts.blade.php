@@ -11,78 +11,32 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+
+        <link rel="stylesheet" href="<?php echo asset('css/main.css')?>" type="text/css"> 
         <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-               height: 100px;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
+           
 
             div {
 
             	bor/der: 1px black solid;
             }
+            .containers{
+                width:400px;
+                text-align: center;
+                margin: auto;
+            }
+            .footer {
+
+                min-height: 200px;
+            }
         </style>
+
+        
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/user') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
+                  @include('partials.auth')
 
-        </div>
+       
 
 
         	 <div class="content">
@@ -90,11 +44,9 @@
 		             @include ('../partials/nav')
 
            
-	                <div class="title m-b-md">
-	                   {{ config('app.name', 'Garden') }}<br />
-
-
-	                </div>
+            	                <div class="title m-b-md">
+            	                   {{ config('app.name', 'Garden') }}<br />
+            	                </div>
 
 
 	                <div class="links">
@@ -112,29 +64,44 @@
 
                           <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
                            
-                         <ul>
-                             
-                             @foreach($purchase as $pur)
+                          <div class="containers">
+
                         
-                                         <li>
-                                                 
-                                                  Plant Name:{{ $pur->plant  }}<br />
-                                                  Quantity of plants: {{ $pur->quantity}}<br />
-                                                  Price  of Plant: £ {{ number_format($pur->price, 2)}}<br />    
-                                                  purchased on: {{ date('d-m-Y', strtotime( $pur->created_at)) }}<br /> 
-                                                  Total cost of Plants:£ {{ number_format($pur->quantity * $pur->price, 2) }}<br /><br />
+                                     <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Quantity</th>
+                                        <th>Plant Name</th>
+                                        <th>Price</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     
+                                        @foreach( $product as $purss )
+                        
+                                       <tr>                                                                                 
+                                              <td>{{$purss->quantity}}</td> 
+                                       
+                                              <td>{{ $purss->plant }}</td>
 
-                                        </li>
+                                              <td>{{ $purss->price  }}</td>
 
-                         @endforeach
+                                        </tr>
 
-                       
+                                         @endforeach      
+                                     
+                                    </tbody>
+                        </table>
 
-                           </ul>
-                       
-                    </div>
+                         </div>
+ 
+                           
+                        
+
+            </div><!-- end of container-->
 
             </div><!-- end of content-->
+            <div class='footer'></div>
         
     </body>
 </html>

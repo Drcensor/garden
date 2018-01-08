@@ -4,6 +4,8 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\User;
+
 
 class ExampleTest extends TestCase
 {
@@ -14,8 +16,10 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $this->get('/')->assertsee('Garden Nursery');
 
-        $response->assertStatus(200);
+       // $response->assertStatus(200);
     }
-}
+
+
+ }

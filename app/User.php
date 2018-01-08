@@ -4,9 +4,16 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
+    public function order(){
+
+        return $this->hasMany(Order::class);
+    }
+
+
     use Notifiable; 
 
     /**
@@ -26,4 +33,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+   
 }

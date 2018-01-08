@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
@@ -26,5 +26,9 @@ Route::get('user/form1', 'ProductController@index')->name('user/form1');
 Route::get('user/product', 'ProductController@link')->name('user/product');
 
 Route::post('user/thankyou', 'QueryController@create')->name('user/thankyou');
+
+Route::get('user/products', function () {
+	return view('products');
+});
 
 

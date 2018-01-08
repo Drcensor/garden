@@ -4,7 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Auth;
 
+use App\User;
+
+use App\Product;
+
+use App\order;
 
 use DB;
 
@@ -40,11 +46,22 @@ class HomeController extends Controller
     public function show()
     {
 
-        $users = DB::table('users')->get();
+          $users = DB::table('users')->get();
 
-         $purchase = DB::table('purchase')->where('users_id', '=', auth()->id())->latest()->get();
+         // $product = DB::table('products')->get();
 
-        return view('accounts', ['users' => $users], ['purchase' => $purchase]);
+          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
+            $product = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+
+          
+
+         // return view('accounts', ['users' => $users], ['ordered' => $ordered], ['product' => $product] );
+           return view('accounts', compact(['users' ,'ordered', 'product'])  );
     }
 }
+
+
+//, ['products' => $products]

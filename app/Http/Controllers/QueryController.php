@@ -8,7 +8,9 @@ use App\Http\Controllers\Auth;
 
 use App\User;
 
-use App\Purchase;
+use App\Product;
+
+use App\order;
 
 use DB;
 
@@ -22,10 +24,11 @@ class QueryController extends Controller
     }
 
 
-    public function index($purchase)
+    public function index($products)
     {
-        $purchase = DB::table('purchase')->get();
-         return view('thankyou', ['purchase' => $purchase]);
+        $products = DB::table('products')->get();
+
+         return view('thankyou', ['products' => $products]);
     }
 
     // public function show()
@@ -48,25 +51,37 @@ class QueryController extends Controller
       public function create()
     {
 
-        $purchase = DB::table('purchase')->insert(
+       
+
+        $orders = DB::table('orders')->insert(
              [
                 'users_id' => auth()->id(),
-                 'plant' => request('plant'),
-                'quantity' => request('quantity'),
-                'price' => request('price')
+                 'product_id' => request( 'product_id'),
+                'quantity' => request('quantity')
+               
 
 
              ]);
 
-         $purchase = DB::table('purchase')->where('users_id', '=', auth()->id())->latest()->get();
+       
 
+         $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
+    
+      $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
 
-        return view('thankyou', ['purchase' => $purchase]);
+          //$products = DB::table('products')->get();
+
+         //  $product = 'select products.id,products.plant, products.price FROM products JOIN data ON products.id=orders.product_id';
+
+           
+
+      
+       return view('thankyou', compact(['ordered', 'products' ,'product']));
 
     }
-
-
 
 
 

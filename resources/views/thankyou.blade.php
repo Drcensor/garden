@@ -1,9 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>purchase</title>
+<!doctype html>
+<html lang="{{ app()->getLocale() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<style>
+        <title>{{ config('app.name', 'Garden') }}</title>
+
+        <!-- Fonts 
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <!-- Styles -->
+        <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -57,25 +65,24 @@
 
             div {
 
-            	bor/der: 1px black solid;
+                bor/der: 1px black solid;
             }
-
-            #form1{
-
-            	width: 350px;
-            	te/xt-align: center;
-            	margin: auto;
-            }
-
-            .bigger {
-
-            	float:right;
+            .containers{
+                width:400px;
+                text-align: center;
+                margin: auto;
             }
         </style>
-</head>
-<body>
 
-	 <div class="flex-center position-ref full-height">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    </head>
+    <body>
+        <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -89,32 +96,91 @@
 
         </div>
 
-         <div class="content">
-             
-                     <div class="links">
 
-                          <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
-                           
-                         <ul>
-                             
-                             @foreach($purchase as $pur)
-                        
-                         <li>
-                                                  your ID:{{ $pur->users_id}}<br />  
-                                                  Plant Name:{{ $pur->plant  }}<br />
-                                                  Quantity of plants: {{ $pur->quantity}}<br />
-                                                  Price  of Plant: £ {{ number_format($pur->price, 2)}}<br />    
-                                                  purchased on: {{ date('d-m-Y', strtotime( $pur->created_at)) }}<br /> 
-                                                  Total cost of Plants:£ {{ number_format($pur->quantity * $pur->price, 2) }}
+             <div class="content">
 
-                        </li>
+                     @include ('../partials/nav')
 
-                         @endforeach
+           
+                    <div class="title m-b-md">
+                       {{ config('app.name', 'Garden') }}<br />
 
-                           </ul>
-                       
+
                     </div>
-         </div>
 
+                        <div class="container">
+
+                            
+
+                                 <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
+
+                                 <div class="containers">
+                                           
+                                  <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>{{$users = Auth::user()->firstname}}</td>
+                                        <td>{{$users = Auth::user()->lastname}}</td>
+                                        <td>{{$users = Auth::user()->email}}</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+
+                              </div>
+                        </div>
+                   
+
+
+                   
+
+                        <div class="containers">
+
+                         
+
+                                     <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Quantity</th>
+                                        <th>Plant Name</th>
+                                        <th>Price</th>
+                                        <th>Cancel</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                     
+                                        
+                                         @foreach($products as $purss)
+                        
+                                       <tr>                                                                                 
+                                              <td>{{$purss->quantity}}</td> 
+                                       
+                                              <td>{{ $purss->plant }}</td>
+
+                                              <td>{{ $purss->price  }}</td>
+
+                                              <td> <button type="submit" class="btn btn-primary"> cancel </button></td>
+
+                                        </tr>
+
+                                         @endforeach      
+                                     
+                                    </tbody>
+                        </table>
+
+                         </div>
+
+                    </div>
+                           
+                        
+
+            </div><!-- end of content-->
+        
     </body>
-    </html>
+</html>
