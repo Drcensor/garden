@@ -36,7 +36,7 @@
 
 					 <input type="reset" id="resetbuttonid" style="display:none;">
 
-					 <button type="submit" class="btn btn-primary"> Purchase </button>
+					 <button type="submit" class="btn btn-danger"> Purchase </button>
 		</form>
 
 	</div><!--end of form tag -->

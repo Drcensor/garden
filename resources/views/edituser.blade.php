@@ -1,4 +1,3 @@
-
 @extends('partials.master')
 
 @section('style')
@@ -9,7 +8,7 @@
                 bor/der: 1px black solid;
             }
             .containers{
-                width:1000px;
+                width:800px;
                 text-align: center;
                 margin: auto;
             }
@@ -20,7 +19,7 @@
 
 @section('content')
 
-    @include('partials.accountscontents')
+    @include('partials.edituserdetails')
 
 @endsection
 
@@ -30,14 +29,3 @@
     @include('partials.footer')
 
 @endsection
-
-
-
-
-
-       
-
-
-        	
-        
- 

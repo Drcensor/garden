@@ -31,27 +31,10 @@ class QueryController extends Controller
          return view('thankyou', ['products' => $products]);
     }
 
-    // public function show()
-    // {
-
-    //     $users = DB::table('users')->get();
-
-    //     return view('accounts', ['users' => $users]);
-
-    // }
-
-
-    //  public function create()
-    // {
-       
-    //     return view('query.product');
-
-    //  }
+    
 
       public function create()
     {
-
-       
 
         $orders = DB::table('orders')->insert(
              [
@@ -59,27 +42,17 @@ class QueryController extends Controller
                  'product_id' => request( 'product_id'),
                 'quantity' => request('quantity')
                
-
-
-             ]);
-
-       
+             ]);    
 
          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
     
-      $products = DB::table('products')
+         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-          //$products = DB::table('products')->get();
-
-         //  $product = 'select products.id,products.plant, products.price FROM products JOIN data ON products.id=orders.product_id';
-
-           
-
       
-       return view('thankyou', compact(['ordered', 'products' ,'product']));
+         return view('thankyou', compact(['ordered', 'products']));
 
     }
 

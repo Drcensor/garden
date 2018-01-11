@@ -31,4 +31,12 @@ Route::get('user/products', function () {
 	return view('products');
 });
 
+Route::get('user/edituser', function () {
+	return view('edituser');
+});
 
+Route::post('user/accounts', 'homeController@update');
+
+Route::get('user/productdelete', 'ProductController@show')->name('user/productdelete');
+
+Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');

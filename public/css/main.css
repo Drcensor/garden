@@ -7,9 +7,16 @@
                 margin: 0;
             }
 
+            div{
+    bord/er:solid #000066 0.5px;
+    
+}
+
             .full-height {
                 height: 100vh;
             }
+
+
 
             .full-heights {
                 height: 70px;
@@ -53,6 +60,31 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .media1 {
-                float:right;
+           
+
+#footer {
+   min-height: 100px;
+   margin-bottom:0px;
+   bottom: 0px;
+    float:left;
+    width:100%;
+    min-width:100px;
+    height:10%;
+    margin:0px;
+    background-color:#949470;
+}
             }
+
+#media{
+    float:right;
+    height:60px;
+    margin:30px 30px 10px 0;
+}
+#money{
+    margin-right:60px;
+}
+.media1{
+     float:right;
+    margin-right:20px;
+}
+

@@ -11,50 +11,77 @@
 
 	                <div class="links">
 
-	                	  <h1>Your Accounts Information</h1>
+                      <h1>Your Accounts Information</h1>
 
-	                	<strong>First name: </strong>{{$users = Auth::user()->firstname}}<br />
-	                    <strong>Last name:  </strong> {{$users = Auth::user()->lastname}}<br />
-	                    <strong>Email:      </strong>{{$users = Auth::user()->email}}<br />
-	                    <strong>Created on: </strong>{{$users = date('d-m-Y', strtotime(Auth::user()->created_at)) }}<br />
-	                </div>
+                     <div class="containers">
+
+	                	
+
+                      <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Created On</th>
+                                        <th>Edit</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                    	                	    <td>{{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</td>
+                    	                      <td>{{$users = Auth::user()->email}}</td>
+                    	                      <td>{{$users = date('d-m-Y', strtotime(Auth::user()->created_at))}}</td>
+                                            <td><a href="edituser"><button type="submit" class="btn btn-danger" > Edit </button></a></td>
+
+                                    </tbody>
+                        </table>
+	                </div></div>
 
 
                      <div class="links">
 
                           <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
                            
-                          <div class="containers">
+                           <div class="containers">
 
-                        
+                         
+
                                      <table class="table table-bordered">
-                                    <thead>
-                                      <tr>
-                                        <th>Quantity</th>
-                                        <th>Plant Name</th>
-                                        <th>Price</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                     
-                                        @foreach( $product as $purss )
-                        
-                                       <tr>                                                                                 
-                                              <td>{{$purss->quantity}}</td> 
-                                       
-                                              <td>{{ $purss->plant }}</td>
+          <thead>
+            <tr>
+               <tr>
+                  <th>Quantity</th>
+                  <th>Plant Name</th>
+                  <th>Price</th>
+                  <th>Total Price</th>
+                  <th>Cancel Time</th>
+                  <th>Cancel</th>
+               </tr>
+            </tr>
+          </thead>
+          <tbody>
 
-                                              <td>{{ $purss->price  }}</td>
+             @foreach($products as $purss)
 
-                                        </tr>
+                 
 
-                                         @endforeach      
-                                     
-                                    </tbody>
+
+                    <tr>
+                  <input class="bigger" type="hidden" name="id"  value="{{$purss->id}} readonly "/>   
+                  <td><input class="bigger" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
+                  <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
+                  <td><input type="text" name="price" value="{{ $purss->price  }}"/></td>
+                   <td><input type="text" name="price" value="{{$purss->quantity * $purss->price  }}"/></td>
+                  <td>{{$users = date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day')) }}</td>
+                  <td>  <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> </td>
+                </tr>
+                 
+
+                  @endforeach
+          </tbody>
                         </table>
 
-                         </div>
- 
+)                         </div>
                            
                         
 

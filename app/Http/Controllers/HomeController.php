@@ -52,14 +52,34 @@ class HomeController extends Controller
 
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
-            $product = DB::table('products')
+            $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
           
 
          // return view('accounts', ['users' => $users], ['ordered' => $ordered], ['product' => $product] );
-           return view('accounts', compact(['users' ,'ordered', 'product'])  );
+           return view('accounts', compact(['users' ,'ordered', 'products'])  );
+    }
+
+    public function update()
+    {
+
+         $users = DB::table('users')->get();
+
+       $updates =  DB::table('users')
+            ->where('id', '=', auth()->id())
+            ->update(['firstname' => ucfirst(request('firstname')),
+             'lastname' => ucfirst(request('lastname')),
+            'email' => request('email')
+           
+        ]);
+
+             $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+
+            return view('accounts', compact(['updates', 'products']));
     }
 }
 

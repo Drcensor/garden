@@ -1,4 +1,3 @@
-
 @extends('partials.master')
 
 @section('style')
@@ -20,7 +19,7 @@
 
 @section('content')
 
-    @include('partials.accountscontents')
+    @include('partials.productdeletepage')
 
 @endsection
 
@@ -30,14 +29,3 @@
     @include('partials.footer')
 
 @endsection
-
-
-
-
-
-       
-
-
-        	
-        
- 
