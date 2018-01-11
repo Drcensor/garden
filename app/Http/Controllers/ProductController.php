@@ -49,6 +49,15 @@ class ProductController extends Controller
 
 
 
+     public function basket() {
+
+        //
+
+
+        return view('products');
+     }
+
+
      public function delete(Request $request) {
 
 

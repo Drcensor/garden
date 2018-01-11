@@ -40,3 +40,7 @@ Route::post('user/accounts', 'homeController@update');
 Route::get('user/productdelete', 'ProductController@show')->name('user/productdelete');
 
 Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
+
+Route::get('user/loginAdmin', function () {
+	return view('loginAdmin');
+});
