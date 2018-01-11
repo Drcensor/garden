@@ -12,6 +12,10 @@
     
 }
 
+input {
+    border: transparent;
+}
+
             .full-height {
                 height: 100vh;
             }

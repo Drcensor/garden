@@ -17,7 +17,7 @@
 
 	                	
 
-                      <table class="table table-bordered">
+                      <table class="table table-striped">
           <thead>
             <tr>
                <tr>
@@ -54,5 +54,7 @@
           </tbody>
                         </table>
 	                </div>
+
+                  <a href="accounts"><button type="submit" class="btn btn-warning" > Return to Accounts </button></a>
 
                 </div>

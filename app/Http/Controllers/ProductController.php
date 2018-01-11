@@ -49,11 +49,15 @@ class ProductController extends Controller
 
 
 
-     public function delete() {
+     public function delete(Request $request) {
 
-     	 //$ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
-     	$delete = DB::table('orders')->where('id', '=', $_POST["id"])->delete();
+     	$request->validate([
+
+                'id' => 'required|int',
+        ]);
+
+        $delete = DB::table('orders')->where('id', $request['id'])->delete();
 
      	 $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
