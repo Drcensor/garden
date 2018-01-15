@@ -75,13 +75,15 @@
                   <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
                   
 
-                  <td> @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
+                  <td>
 
-                     <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> 
-                  
-                  @else
+                   @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
-                   <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a> 
+                                 <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> 
+                              
+                              @else
+
+                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a> 
                 
                 @endif
                   </td>

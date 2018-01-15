@@ -11,15 +11,29 @@
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('username') ? ' has-error' : '' }}">
-                            <label for="username" class="col-md-4 control-label">Username</label>
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
-                                @if ($errors->has('username'))
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('username') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                         <div class="form-group{{ $errors->has('admin') ? ' has-error' : '' }}">
+                            <label for="admin" class="col-md-4 control-label">Admin Username</label>
+
+                            <div class="col-md-6">
+                                <input id="admin" type="admin" class="form-control" name="admin" value="{{ old('admin') }}" required autofocus>
+
+                                @if ($errors->has('admin'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('admin') }}</strong>
                                     </span>
                                 @endif
                             </div>

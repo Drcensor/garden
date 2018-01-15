@@ -41,6 +41,18 @@ Route::get('user/productdelete', 'ProductController@show')->name('user/productde
 
 Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
 
-Route::get('user/loginAdmin', function () {
-	return view('loginAdmin');
-});
+
+
+
+
+// Route::get('loginAdmin', function () {
+// 	return view('loginAdmin');
+// });
+
+// Route::Post('/loginAdmin', 'UserAdminController@store');
+
+Route::get('user/adminpanel', 'UserAdminController@index' );
+
+// Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
+//     return "adminpanel";
+// }]);

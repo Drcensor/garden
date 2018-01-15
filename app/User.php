@@ -14,6 +14,17 @@ class User extends Authenticatable
     }
 
 
+    //  protected $casts = [
+    //     'is_admin' => 'boolean',
+    // ];
+
+    
+    public function isAdmin()
+    {
+        return $this->admin; // this looks for an admin column in your users table
+    }
+
+
     use Notifiable; 
 
     /**
@@ -33,6 +44,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
 
 
    

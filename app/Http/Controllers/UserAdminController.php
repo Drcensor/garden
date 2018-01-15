@@ -33,7 +33,8 @@ class UserAdminController extends Controller
 
     public function index()
     {
-        //
+       // return view('adminpanel');
+        return view('adminpanel');
     }
 
     /**
@@ -54,8 +55,34 @@ class UserAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       //  $admins = DB::table('user_admins')->where('users_id', '6')->get();
+
+        //  $this->validate(request(),[
+
+        //     'username' => 'required',
+        //     'password' => 'required'
+
+        // ]);
+
+         // $user = DB::table('users')->where([
+
+         //    'email' => 'dr@gmail.com',
+         //     'password' => '123456'
+         // ])->get();
+
+         // \auth::login($user);
+
+        //  if(auth()->attempt(request([
+        //     'email' => 'dr@gmail.com',
+        //     'password' => '123456'
+        // ])));
+
+        return view('adminpanel');
     }
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -65,7 +92,15 @@ class UserAdminController extends Controller
      */
     public function show(UserAdmin $userAdmin)
     {
-        //
+        $this->validate(request(),[
+
+            'username' => 'required',
+            'password' => 'required'
+
+        ]);
+     //  \auth()->loginAdmin($useradmin);
+
+        return redirect('/');
     }
 
     /**
@@ -99,6 +134,7 @@ class UserAdminController extends Controller
      */
     public function destroy(UserAdmin $userAdmin)
     {
-        //
+        auth()->logout();
+        return redirect()->home();
     }
 }
