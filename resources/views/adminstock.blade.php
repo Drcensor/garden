@@ -2,6 +2,6 @@
 
 @section('content')
 
- @include('partials.accountUsersPurchases')
+ @include('partials.adminstok')
 
 @endsection

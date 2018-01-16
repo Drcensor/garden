@@ -46,20 +46,15 @@ class HomeController extends Controller
     public function show()
     {
 
-          $users = DB::table('users')->get();
-
-         // $product = DB::table('products')->get();
+        //  $users = DB::table('users')->get();    
 
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
-            $products = DB::table('products')
+            $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-          
-
-         // return view('accounts', ['users' => $users], ['ordered' => $ordered], ['product' => $product] );
-           return view('accounts', compact(['users' ,'ordered', 'products'])  );
+           return view('accounts', compact(['ordered', 'products'])  );
     }
 
     public function update()
@@ -75,13 +70,19 @@ class HomeController extends Controller
            
         ]);
 
-             $products = DB::table('products')
+
+            //$products = $this->show();
+
+            
+             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
             return view('accounts', compact(['updates', 'products']));
     }
+
+    
+
 }
 
 
-//, ['products' => $products]

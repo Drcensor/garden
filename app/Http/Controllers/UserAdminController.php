@@ -33,10 +33,34 @@ class UserAdminController extends Controller
 
     public function index()
     {
-       // return view('adminpanel');
-        return view('adminpanel');
+         $users = DB::table('users')->get(); 
+        $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+
+        return view('adminpanel', compact(['users','products']));
     }
 
+     public function charts()
+    {
+       // return view('adminpanel');
+        return view('adminpanelCharts');
+    }
+
+
+      public function editUser()
+    {
+       // return view('adminpanel');
+        return view('adminEditUser');
+    }
+
+      public function stock()
+    {
+
+         $products = DB::table('products')->get();
+
+        return view('adminstock', compact(['products']));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -121,11 +145,35 @@ class UserAdminController extends Controller
      * @param  \App\UserAdmin  $userAdmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, UserAdmin $userAdmin)
-    {
-        //
-    }
+    // public function update(Request $request, UserAdmin $userAdmin)
+    // {
+    //     //
+    // }
 
+
+    public function update()
+    {
+
+         $users = DB::table('users')->get();
+
+       $updates =  DB::table('users')
+            ->where('id', '=', auth()->id())
+            ->update(['firstname' => ucfirst(request('firstname')),
+             'lastname' => ucfirst(request('lastname')),
+            'email' => request('email')
+           
+        ]);
+
+
+            //$products = $this->show();
+
+            
+             $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+
+            return view('accounts', compact(['users','updates', 'products']));
+    }
     /**
      * Remove the specified resource from storage.
      *

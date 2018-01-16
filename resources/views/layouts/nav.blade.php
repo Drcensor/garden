@@ -12,6 +12,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <style>
+        
+        .containers{
+
+            width: 80%;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -48,7 +57,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+                                   Administrator : {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -63,11 +72,23 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                     <li>
-
-                                        <a href="{{ route('user/accounts') }}">My Account</a>
-
+                                         <a href="{{ route('user/adminpanel') }}">Main Page </a>
                                     </li>
+                                    <li>
+                                         <a href="{{ route('user/adminpanelCharts') }}">Account Charts</a>
+                                    </li>
+
+                                    <li>
+                                         <a href="{{ route('user/adminEditUser') }}">Edit User</a>
+                                    </li>
+
+                                    <li>
+                                         <a href="{{ route('user/adminstock') }}">Product Stock</a>
+                                    </li>                                   
+
+                                   
                                 </ul>
                             </li>
                         @endguest

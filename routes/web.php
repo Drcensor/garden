@@ -42,16 +42,14 @@ Route::get('user/productdelete', 'ProductController@show')->name('user/productde
 Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
 
 
+Route::get('user/adminpanel', 'UserAdminController@index' )->name('user/adminpanel');
 
+Route::get('user/adminpanelCharts', 'UserAdminController@charts' )->name('user/adminpanelCharts');
 
+Route::get('user/adminEditUser', 'UserAdminController@editUser' )->name('user/adminEditUser');
 
-// Route::get('loginAdmin', function () {
-// 	return view('loginAdmin');
-// });
+Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminstock');
 
-// Route::Post('/loginAdmin', 'UserAdminController@store');
-
-Route::get('user/adminpanel', 'UserAdminController@index' );
 
 // Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
 //     return "adminpanel";

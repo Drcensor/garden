@@ -47,9 +47,21 @@ class QueryController extends Controller
          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
     
-         $products = DB::table('products')
+         $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
+
             ->get();
+
+            // UPDATE "products a  JOIN orders b ON a.quantity = b.quantity
+            //         SET a.products - b.orders
+            //         WHERE a.quantity = b.quantity";
+
+             $newOrders = \DB::table('orders')->get();
+                     foreach ($newOrders as $order){
+                     $stock = \DB::table('products')->where('id', $order->product_id)->first()->stock;
+                     if($stock > $order->quantity){
+                     \DB::table('products')->where('id', $order->product_id)->decrement('stock',$order->quantity);
+                 }
 
       
          return view('thankyou', compact(['ordered', 'products']));
@@ -60,3 +72,6 @@ class QueryController extends Controller
 
 
 }
+
+
+//->set ( 'products.stock', '-', 'orders.quantity')

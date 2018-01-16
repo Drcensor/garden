@@ -31,6 +31,9 @@ class ProductController extends Controller
         return view('form1');
     }
 
+
+    
+
      public function link()
     {
        
@@ -38,9 +41,12 @@ class ProductController extends Controller
 
      }
 
+
+
+
      public  function show() {
 
-     	 $products = DB::table('products')
+     	 $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
@@ -68,7 +74,7 @@ class ProductController extends Controller
 
         $delete = DB::table('orders')->where('id', $request['id'])->delete();
 
-     	 $products = DB::table('products')
+     	 $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
  
