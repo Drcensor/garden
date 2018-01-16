@@ -1,0 +1,540 @@
+/*this page is for every page on the website*/
+
+body {
+	background-color:#E0E0D6;
+	margin:0px;
+	padding:0px;
+}
+hr {
+	clear:both;
+	width:100%;
+	margin:0;
+	border:0px;
+	}
+
+div{
+	bor/der:solid #000066 0.5px;
+	
+}
+/*this Div allows the website to center in the page */
+#outerwrapper{
+	margin:auto;
+	padding:0px;
+	width:90%;
+	height:100%;
+	min-height:1060px;
+	background-color:#E0E0D6;
+}
+/*this Div controls the total width of the webs content */				
+#innercontent{
+	margin:auto;
+	padding:0px;
+	width:90%;
+	height:100%;
+	min-height:1060px;
+	background-color:#E0E0D6;
+	
+}
+/* this is the div to hold the flags above the header */
+#langflag{
+	float:right;
+	height:1.5%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+#langflag img, #langflag p {
+	float:right;
+	margin:2px 0 0 10px;
+	padding:0px;
+}
+
+
+
+/*the header and and all which are inside the div*/						
+#header{
+	width:100%;
+	min-width:1000px;
+	height:10%;
+	min-height:100px;
+	margin-top:0.2%;
+	background-color:#FAFAFA;
+}
+
+#logo{
+	float:left;
+	width:8%;
+	height:8%;
+	margin:10px 0 0 20px;
+}
+/*divs for company name and Text quote */
+#companyname{
+	float:left;
+	width:380px;
+	height:90px;
+	margin:10px 0 0 10px;
+	padding:0px;
+}
+#company{
+	color: #AE4747;
+	font-family:verdana;
+	font-size:36px;
+	padding:0px;
+	margin:0 0 10px 20px;
+}
+#quality{
+	font-family:bernard;
+	font-size:18px;
+	color:#000;
+	padding:0px;
+	margin:0px;
+}
+/*code below for internal search */
+#search{
+	float:left;
+	width:40%;
+	height:40px;
+	padding:0px;
+	margin:30px 0 0 30px;
+	background-color:#3333ff;
+	color:#000;
+	border:solid #000066 0.5px;
+}
+#searchengine1{
+	float:left;
+	margin:7px 0 0 0;
+	padding:0 0 0 30px;
+}
+#gine2{
+	color:#fff;
+}
+.len{
+	width:37%;
+}
+
+.len1{
+	width:37%;
+	font-size:13px;
+}
+/*end of header*/
+
+
+
+
+
+/*start of navigation bar code */
+#navdiv{
+	width:60%;
+	width:930px;
+	height:10%;
+	min-height:50px;
+	padding:0px;
+	margin:auto;
+}
+#nav, #nav ul{
+	float:left;
+	width:100%;
+	height:100%;
+	list-style: none;
+	line-height: 1em;
+	font-weight: bold;	
+	padding:0px;
+	padding-left:1px;
+	margin:0;
+	}
+	
+	
+#nav li {
+	float:left;
+	padding:15px 0 15px 0;
+	margin:0px;
+	height:100%;
+	text-align:center;
+	width: 19.4%;
+	color:#FFF;
+	border:solid;
+	border-width:0 1px 0 1px;
+	border-color:#fff;
+}
+/*link colours for the navigation bar */
+#nav a:link, a:hover, a:active, a:visited{
+	 text-decoration:none;
+	 margin:0px;
+	 padding:0px;
+	 border-style:none;
+	 border:0px;}		
+#nav a:link  {
+	color:#AE4747; }
+#nav a:visited{
+	color:#AE4747 ;}
+#nav a:active{
+	color:#fff;}
+#nav a:hover{
+	color:#000;}
+#changebg{
+	background-color:orange;
+}
+/*end of nav*/
+
+
+
+
+
+
+
+/*main content*/
+
+#maincontent{
+	
+	float:left;
+	width:100%;
+	height:68%;
+	min-height:810px;
+	background-color:#E0E0D6;
+	margin:0px;
+}
+/*the div for the image slider on the index and form page */				
+#slider1{
+	float:left;
+	width:49%;
+	height:80%;
+	min-height:300px;
+	background-color:#E0E0D6;
+	padding:20px 0 0 0;
+	margin-top:10%;
+}
+
+
+/*this is for smaller images on the index page and on the about us page*/
+.stillimg{
+	float:left;
+	width:100%;
+	height:150px;
+}
+.stillimg img {
+	width:120px;
+	height:120px;
+	border:0px;
+	margin:15px 0 0 30px;
+	
+}
+/* this is on the index page */
+#welcome{
+	float:left;
+	width:49%;
+	height:auto;
+	min-height:400px;
+	background-color:#E0E0D6;
+	font-family:calibri;
+	padding:0 0 0 20px;
+	margin-top:10%;
+	
+}
+#welcome p {
+	font-size:15px;
+}
+#blu{
+	color:#0000ff;
+}
+/*this is the end of the index page  */
+
+
+
+
+
+/* h1 on the about us page and Contact page*/
+.cen{
+	text-align:center;
+	font-weight: bold;
+}
+.col{
+	color:red;
+}
+
+
+
+
+
+
+
+/*footer info below*/
+#footer{
+	
+	margin-bottom:0px;
+	float:left;
+	width:100%;
+	min-width:1000px;
+	height:10%;
+	margin:0px;
+	background-color:#949470;
+}
+#copy{
+	float:left;
+	width:150px;
+	height:30px;
+	background-color:#949470;
+	margin:45px 0 0 30px;
+	
+}
+#terms{
+	float:left;
+	width:250px;
+	height:30px;
+	background-color:#949470;
+	margin:45px 0 0 30px;
+	
+}
+#media{
+	float:right;
+	height:60px;
+	margin:30px 30px 10px 0;
+}
+#money{
+	margin-right:60px;
+}
+.media1{
+	margin-right:20px;
+}
+/*end of footer info*/
+
+
+
+
+/*for the policy page*/
+.policy{
+	padding:20px;
+}
+
+
+
+
+
+
+/*css for about us page*/	
+#aboutus{
+	float:left;
+	width:95%;
+	height:auto;
+	min-height:300px;
+	background-color:#E0E0D6;
+	font-family:calibri;
+	padding:0 20px 0 20px;
+	margin:0px;
+}
+/*for the three images on the about us page */
+.cendiv{
+	margin:auto;
+	height:15%;
+	width:50%;
+	margin-top:10%;
+}
+
+
+
+
+
+
+
+/*this is for contacts page*/
+#contact{
+	float:left;
+	min-height:650px;
+	margin-top:10%;
+}
+
+/*written info for contacting page*/
+#contact1{
+	float:left;
+	width:49%;
+	height:230px;
+	padding:0px;
+	margin:0px;
+}
+#contact1 p{
+	padding-left:20px;
+}
+/*telephone and email */
+#contact2{
+	float:left;
+	width:49%;
+	height:230px;
+	padding:0px;
+	margin:0px;
+}
+#contact2 p{
+	padding:20px 0 0 30px;
+}
+#contact2 img{
+	float:left;
+	padding:0px;
+	margin:0px;
+}
+/*google map */
+#contact3{
+	float:left;
+	width:49%;
+	height:50%;
+	min-height:380px;
+	padding:0px;
+	margin:10px 0 10px 0 ;
+	border:solid #ff0000 1px;
+}
+ #map_canvas {
+        width: 98%;
+        height: 98%;
+		min-height:380px;
+      }
+/*post address */
+#contact4{
+	float:left;
+	width:49%;
+	height:49%;
+	padding:0px;
+	margin:0px;
+}
+
+address{
+	float:left;
+	padding:80px;
+	font-size:20px;
+}
+/*makes words bigger*/
+#big{
+	font-size:25px;
+	color:#AE4747;
+}
+#lower{
+	padding-top:150px;
+}
+/*this is the end of contacts page  */
+
+
+
+
+
+
+
+
+/*code for form page */
+
+#slider2{
+	float:left;
+	width:51%;
+	height:80%;
+	min-height:300px;
+	background-color:#E0E0D6;
+	padding:20px 0 0 0;
+	margin-top:2%;
+}
+
+#form1{
+	float:left;
+	width:49%;
+	margin-top:10%;
+}
+.formcontainer{
+	float:left;
+	width:400px;
+	padding:0px;
+	color:#AE4747;
+}
+#fill{
+	float:left;
+	margin:60px 0 0 0px;
+	padding:0 0px 0 0 ;
+	width:49%;
+	height:8%;
+}
+#fill p {
+	text-align:center;
+	margin:auto;
+	font-size:18px;
+}
+/*this is to make the inputs wider*/
+.bigger{
+	float:right;
+	width:220px;
+	border:solid #E0E0D6 0.5px;
+}
+
+.bigger1{
+	float:right;
+	width:40px;
+	margin-right:90px;
+	border:solid #E0E0D6 0.5px;
+}
+.bigger2{
+	float:right;
+	width:260px;
+	margin-right:40px;
+	border:solid #E0E0D6 0.5px;
+}
+
+#totheright{
+	float:right;
+	margin-right:150px;
+	border:solid #E0E0D6 0.5px;
+}
+
+.totheright2{
+	float:right;
+	margin-right:90px;
+	border:solid #E0E0D6 0.5px;
+}
+/*this is in the form on the form page  */
+.totheright{
+	float:right;
+	margin-right:40px;
+}
+/*this is in the form on the form page  */
+.totheright1{
+	float:right;
+	margin-right:20px;
+}
+
+#pad{
+	padding-left:40px;
+}
+
+#plantlist{
+	float:right;
+	width:500px;
+	margin-top:40px;
+}
+#cenimg{
+	margin:auto;
+	width:960px;
+	height:auto;
+	min-height:70%;
+}
+.cen1{
+	text-align:center;
+	font-weight: bold;
+	width:100%;
+	height:100px;
+}
+#thankyou{
+	margin:auto;
+	margin-top:40px;
+	color:green;
+	width:500px;
+	text-align:center;
+}
+#returnback{
+	margin:auto;
+	width:500px;
+	color:red;
+	text-align:center;
+}
+#cencol{
+	color:green;
+	text-align:center;
+}
+
+
+
+
+
+
+

@@ -4,10 +4,28 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    public function order(){
+
+        return $this->hasMany(Order::class);
+    }
+
+
+    //  protected $casts = [
+    //     'is_admin' => 'boolean',
+    // ];
+
+    
+    public function isAdmin()
+    {
+        return $this->admin; // this looks for an admin column in your users table
+    }
+
+
+    use Notifiable; 
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +33,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+         'firstname','lastname', 'email', 'password',
     ];
 
     /**
@@ -26,4 +44,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+
+
+   
 }
