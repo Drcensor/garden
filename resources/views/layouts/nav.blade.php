@@ -20,6 +20,10 @@
             width: 80%;
             margin: auto;
         }
+        .bigger1 {
+
+            width: 60px;
+        }
     </style>
 </head>
 <body>

@@ -11,4 +11,10 @@ class product extends Model
         return $this->hasMany(Order::class);
     }
 
+    public function show() {
+     $products = DB::table('products')->where('users_id', '=', auth()->id())
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+    }
+
 }

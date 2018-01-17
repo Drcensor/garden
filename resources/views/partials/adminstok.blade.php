@@ -13,30 +13,37 @@
 	                	 <h1> Accounts Information of Products</h1>
 
                      <table class="table table-bordered">
+
                                     <thead>
                                       <tr>
                                         <th>ID No</th>
                                         <th>Plant</th>
                                         <th>Description</th>
                                         <th>Price</th>
-                                         <th>Stoke</th>
+                                         <th>Stock</th>
                                         <th>created on</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       
-                                        @foreach($products as $pro)
+                                        @foreach($editproducts as $pro)
+
+                                         <form method="post" action="editproducts">
+
+                                           {{csrf_field()}}
                                        <tr>
 
-                                            <td>{{$pro->id}}</td>
-                                            <td> {{$pro->plant}}</td>
-                                            <td>{{$pro->description}}</td>
-                                             <td> {{$pro->price}}</td>
-                                            <td>{{$pro->stock}}</td>
-                                            <td>{{$pro->created_at}}</td>
-                                            <td><a href="edituser"><button type="submit" class="btn btn-danger" > Edit </button></a></td>
+                      <td><input class="bigger" type="text" name="id"  value="{{$pro->id}}" readonly /> </td>
+                      <td><input class="bigger" type="text" name="plant"  value="{{$pro->plant}} "/> </td>
+                      <td><input class="bigger" type="text" name="description"  value="{{$pro->description}} "/></td>
+                       <td><input class="bigger" type="text" name="price"  value="{{$pro->price}} "/> </td>
+                      <td><input class="bigger" type="text" name="stock"  value="{{$pro->stock}} "/></td>
+                      <td><input class="bigger" type="text" name="created_at"  value="{{$pro->created_at}} "/></td>
+                      <td><button type="submit" class="btn btn-danger" > Edit </button></td>
 
                                           </tr>
+
+                                        </form>
                                         @endforeach
                                     </tbody>
                         </table>
