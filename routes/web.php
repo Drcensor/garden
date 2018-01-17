@@ -45,6 +45,8 @@ Route::get('user/adminpaneledituser', 'UserAdminController@create' )->name('user
 
 Route::post('user/adminpaneledituser', 'UserAdminController@update' )->name('user/adminpaneledituser');
 
+Route::get('user/adminEditUser', 'UserAdminController@editUser' )->name('user/adminEditUser');
+
 
 Route::get('user/adminpanelCharts', 'UserAdminController@charts' )->name('user/adminpanelCharts');
 
