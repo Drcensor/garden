@@ -5,3 +5,9 @@
 @include('partials.adminAllOrders')
 
 @endsection
+
+@section('footer')
+
+    @include('partials.adminFooter')
+
+@endsection

@@ -54,8 +54,7 @@
                                                           <th>Price</th>
                                                           <th>Total Price</th>
                                                           <th>Time Purchased</th>
-                                                          <th>Ordered</th>
-                                                          <th>Canceled</th>
+                                                          
                                                        </tr>
                                                     </tr>
                                                   </thead>
@@ -63,33 +62,26 @@
 
                    @foreach($products as $purss)
               
-                   <form method="post" action="adminpanel">
+                   
 
                                            {{csrf_field()}}
-
+                      @if( date("d/m/Y") >= date('d-m-Y', strtotime(($purss->created_at) . '+ 6 day'))  )
               <tr>
-                  <td><input class="bigger1" type="text" name="id"  value="{{$purss->id}} "/> </td> 
-                  <td><input class="bigger1" type="text" name="user_id"  value="{{$purss->users_id}} "/> </td>  
-                  <td><input class="bigger1" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
-                  <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
-                  <td><input class="bigger1" type="text" name="price" value="£ {{ $purss->price  }}"/></td>
-                   <td><input class="bigger1" type="text" name="price" value="£ {{$purss->quantity * $purss->price  }}"/></td>
+                  <td>{{$purss->id}}  </td> 
+                  <td>{{$purss->users_id}}  </td>  
+                  <td>{{$purss->quantity}} </td>
+                  <td>{{ $purss->plant }} </td>
+                  <td>£ {{ $purss->price  }}</td>
+                   <td>£ {{$purss->quantity * $purss->price  }}</td>
                   <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
-                  <td>
-                      @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
-
-                                     <button type="submit" class="btn btn-danger" > Delete </button>                              
-                                 @else
-                                     <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a>                 
-                        @endif
-                   </td>
-                   <td> <button type="submit" class="btn btn-danger" > Delete </button>  </td>
+                 
                 </tr>
                  
-                  </form>
+                 @endif
                   @endforeach
           </tbody>
                         </table>
+                   <a href="adminpurchases"><button type="submit" class="btn btn-success" > Edit Purchases Page </button></a>
 
                         </div>
                         </div><!-- end of container-->

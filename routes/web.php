@@ -33,7 +33,7 @@ Route::get('user/productdelete', 'ProductController@show')->name('user/productde
 
 Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
 
-Route::Post('user/adminpanel', 'ProductController@admindelete')->name('user/adminpanel');
+Route::Post('user/adminpurchases', 'ProductController@admindelete')->name('user/adminpurchases');
 
 
 
@@ -58,7 +58,7 @@ Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminsto
 
 Route::post('user/editproducts', 'OrderController@update');
 
-Route::get('user/adminpurchases', 'OrderController@edit');
+Route::get('user/adminpurchases', 'OrderController@edit')->name('user/adminpurchases');
 
 Route::post('user/thankyou', 'QueryController@create')->name('user/thankyou');
 

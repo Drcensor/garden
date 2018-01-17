@@ -5,3 +5,9 @@
  @include('partials.adminstok')
 
 @endsection
+
+@section('footer')
+
+    @include('partials.adminFooter')
+
+@endsection

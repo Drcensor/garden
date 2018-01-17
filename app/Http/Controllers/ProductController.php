@@ -93,6 +93,6 @@ class ProductController extends Controller
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-          return view('adminpanel', compact(['delete','users','products']));
+          return view('adminpurchases', compact(['delete','users','products']));
      }
 }

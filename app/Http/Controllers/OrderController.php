@@ -66,9 +66,18 @@ class OrderController extends Controller
      * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function edit(order $order)
+    public function edit()
     {
-       return view('adminpurchases');
+
+         $users = DB::table('users')->get();
+
+       //  $products = $this->show(); 
+
+        $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+            
+       return view('adminpurchases', compact(['users','products']));
     }
 
     /**

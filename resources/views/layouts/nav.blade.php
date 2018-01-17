@@ -24,6 +24,12 @@
 
             width: 60px;
         }
+        #footer {
+
+            min-height: 100px;
+            background: grey;
+
+        }
     </style>
 </head>
 <body>
@@ -89,7 +95,7 @@
                                     </li>
 
                                     <li>
-                                         <a href="{{ route('user/adminpurcases') }}">All Purchases/ Edit</a>
+                                         <a href="{{ route('user/adminpurchases') }}">All Purchases/ Edit</a>
                                     </li> 
 
                                     <li>
@@ -106,6 +112,8 @@
         </nav>
 
         @yield('content')
+
+         @yield('footer')
     </div>
 
     <!-- Scripts -->
