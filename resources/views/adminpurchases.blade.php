@@ -2,6 +2,6 @@
 
 @section('content')
 
-@include('partials.usersDetails')
+@include('partials.adminAllOrders')
 
 @endsection
