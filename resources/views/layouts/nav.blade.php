@@ -85,12 +85,16 @@
                                     </li>
 
                                     <li>
-                                         <a href="{{ route('user/adminEditUser') }}">Edit User</a>
+                                         <a href="{{ route('user/adminEditUser') }}">All Users / Edit</a>
                                     </li>
 
                                     <li>
+                                         <a href="{{ route('user/adminpurcases') }}">All Purchases/ Edit</a>
+                                    </li> 
+
+                                    <li>
                                          <a href="{{ route('user/adminstock') }}">Product Stock</a>
-                                    </li>                                   
+                                    </li>                                  
 
                                    
                                 </ul>

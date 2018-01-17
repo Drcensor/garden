@@ -20,6 +20,8 @@
 
 				{{csrf_field()}}
 
+					<input type="hidden" name="id" value="" />
+
                     <label>Plant Name &#58;      <select name="product_id">
                                                        <option value="1">Pointsettia  £5.99 </option>
                                                         <option value="2">Hyacinth £4.99</option>

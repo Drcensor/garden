@@ -1,11 +1,10 @@
 
-<style>
 div {
 
 	bor/der: 1px black solid;
 }
 .containers{
-    width:400px
+    width:1000px
     text-align: center;
     margin: auto;
 }
@@ -24,7 +23,7 @@ div {
 	
 }
 
-            .targetarea { /* CSS for container div(s) of the zoomable image */
+.targetarea { /* CSS for container div(s) of the zoomable image */
 	width: 325px; /* wide or wider than the widest zoomable image */
 	height: 338px; /* high or higher than the tallest zoomable image */
 	margin-top:3px;
@@ -69,10 +68,11 @@ div {
 
 /*this is for products page*/
 .onebyone{
-	float:left;
+	floa/t:left;
 	height:210px;
-	width:100%;
-	margin:10px 0 0 0;
+	width:70%;
+	ma/rgin:10px 0 0 0;
+	margin: auto;
 }
 
 .onebyone img {
@@ -88,11 +88,12 @@ div {
 	
 }
 .outerbox{
-	float:left;
+	floa/t:left;
 	height:80px;
-	width:100%;
+	width:70%;
 	padding:0px;
-	margin:10px 0 10px 0;
+	marg/in:10px 0 10px 0;
+	margin: auto;
 }
 .innerbox{
 	float:left;
@@ -115,7 +116,7 @@ div {
 	color:red;
 }
 
-     </style>
+   
 
 
      

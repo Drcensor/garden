@@ -51,7 +51,7 @@ class QueryController extends Controller
        // $update = DB::table('products')->where('id', $this->product_id)->decrement('stock', $ordered->quantity);
 
 
-         // $update = DB::table('products')->where('id', 1)->decrement('stock', );
+          $update = DB::table('products')->where('id', $_POST['product_id'])->decrement('stock', $_POST['quantity']);
 
 
 
@@ -59,12 +59,12 @@ class QueryController extends Controller
 
 
 
-          $ordered = \DB::table('orders', 'ORDER BY ID DESC LIMIT 1')->where('users_id', '=', auth()->id() )->latest()->get();
-                     foreach ($ordered as $orders){               
-                     $stock = \DB::table('products')->where('id', $orders->product_id)->first()->stock;
-                     if($stock > $orders->quantity){
-                     \DB::table('products')->where('id', $orders->product_id)->latest()->decrement('stock',$orders->quantity);
-                 }}
+          // $ordered = \DB::table('orders', 'ORDER BY ID DESC LIMIT 1')->where('users_id', '=', auth()->id() )->latest()->get();
+          //            foreach ($ordered as $orders){               
+          //            $stock = \DB::table('products')->where('id', $orders->product_id)->first()->stock;
+          //            if($stock > $orders->quantity){
+          //            \DB::table('products')->where('id', $orders->product_id)->latest()->decrement('stock',$orders->quantity);
+          //        }}
 
                 
                   

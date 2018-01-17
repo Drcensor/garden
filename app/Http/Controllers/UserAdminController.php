@@ -53,8 +53,9 @@ class UserAdminController extends Controller
 
       public function editUser()
     {
-       // return view('adminpanel');
-        return view('adminEditUser');
+        $users = DB::table('users')->get();
+
+        return view('adminEditUser', compact('users'));
     }
 
       public function stock()
