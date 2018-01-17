@@ -50,6 +50,10 @@ class HomeController extends Controller
 
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
+          
+          // $products = $this->show(); 
+
+
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
@@ -71,12 +75,12 @@ class HomeController extends Controller
         ]);
 
 
-            //$products = $this->show();
+            $products = $this->show();
 
             
-             $products = DB::table('products')->where('users_id', '=', auth()->id())
-            ->join('orders', 'products.id', '=', 'orders.product_id')
-            ->get();
+            //  $products = DB::table('products')->where('users_id', '=', auth()->id())
+            // ->join('orders', 'products.id', '=', 'orders.product_id')
+            // ->get();
 
             return view('accounts', compact(['updates', 'products']));
     }

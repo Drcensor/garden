@@ -32,7 +32,7 @@
                                                   </select>
                     <!--  <label>Plant Price &#58;</label><input class="bigger" type="text" name="price" value="4.99" onclick="this.value='';"/>    -->                        
 
-					 <label>Quantity &#58; </label> <input class="bigger" type="number" name="quantity" min="0" max="5" value="0"/>
+					 <label>Quantity &#58; </label> <input class="bigger" type="number" name="quantity" min="1" max="5" value=""/>
 
 					 <button type="submit" class="btn btn-danger"> Purchase </button>
 		</form>

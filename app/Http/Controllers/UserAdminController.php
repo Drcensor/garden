@@ -33,7 +33,10 @@ class UserAdminController extends Controller
 
     public function index()
     {
-         $users = DB::table('users')->get(); 
+         $users = DB::table('users')->get();
+
+       //  $products = $this->show(); 
+
         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
@@ -57,9 +60,9 @@ class UserAdminController extends Controller
       public function stock()
     {
 
-         $products = DB::table('products')->get();
+         $editproducts = DB::table('products')->latest()->get();
 
-        return view('adminstock', compact(['products']));
+        return view('adminstock', compact(['editproducts']));
     }
     /**
      * Show the form for creating a new resource.
@@ -68,7 +71,8 @@ class UserAdminController extends Controller
      */
     public function create()
     {
-        //
+         $users = DB::table('users')->get();
+        return view('adminpaneledituser', compact('users'));
     }
 
     /**
@@ -79,29 +83,9 @@ class UserAdminController extends Controller
      */
     public function store(Request $request)
     {
-       //  $admins = DB::table('user_admins')->where('users_id', '6')->get();
+       
 
-        //  $this->validate(request(),[
-
-        //     'username' => 'required',
-        //     'password' => 'required'
-
-        // ]);
-
-         // $user = DB::table('users')->where([
-
-         //    'email' => 'dr@gmail.com',
-         //     'password' => '123456'
-         // ])->get();
-
-         // \auth::login($user);
-
-        //  if(auth()->attempt(request([
-        //     'email' => 'dr@gmail.com',
-        //     'password' => '123456'
-        // ])));
-
-        return view('adminpanel');
+       
     }
 
 
@@ -122,7 +106,7 @@ class UserAdminController extends Controller
             'password' => 'required'
 
         ]);
-     //  \auth()->loginAdmin($useradmin);
+    
 
         return redirect('/');
     }
@@ -154,25 +138,19 @@ class UserAdminController extends Controller
     public function update()
     {
 
-         $users = DB::table('users')->get();
+         
 
        $updates =  DB::table('users')
-            ->where('id', '=', auth()->id())
+            ->where('id', $_POST['id'])
             ->update(['firstname' => ucfirst(request('firstname')),
              'lastname' => ucfirst(request('lastname')),
             'email' => request('email')
            
         ]);
 
+            $users = DB::table('users')->latest()->get();
 
-            //$products = $this->show();
-
-            
-             $products = DB::table('products')
-            ->join('orders', 'products.id', '=', 'orders.product_id')
-            ->get();
-
-            return view('accounts', compact(['users','updates', 'products']));
+            return view('adminpaneledituser', compact(['users','updates']));
     }
     /**
      * Remove the specified resource from storage.

@@ -21,9 +21,40 @@ Route::get('user', 'HomeController@index')->name('user');
 
 Route::get('user/accounts', 'HomeController@show')->name('user/accounts');
 
+Route::post('user/accounts', 'homeController@update');
+
+
 Route::get('user/form1', 'ProductController@index')->name('user/form1');
 
 Route::get('user/product', 'ProductController@link')->name('user/product');
+
+
+Route::get('user/productdelete', 'ProductController@show')->name('user/productdelete');
+
+Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
+
+Route::Post('user/adminpanel', 'ProductController@admindelete')->name('user/adminpanel');
+
+
+
+Route::get('user/adminpanel', 'UserAdminController@index' )->name('user/adminpanel');
+
+
+
+Route::get('user/adminpaneledituser', 'UserAdminController@create' )->name('user/adminpaneledituser');
+
+Route::post('user/adminpaneledituser', 'UserAdminController@update' )->name('user/adminpaneledituser');
+
+
+Route::get('user/adminpanelCharts', 'UserAdminController@charts' )->name('user/adminpanelCharts');
+
+Route::get('user/adminEditUser', 'UserAdminController@editUser' )->name('user/adminEditUser');
+
+Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminstock');
+
+
+
+Route::post('user/editproducts', 'OrderController@update');
 
 Route::post('user/thankyou', 'QueryController@create')->name('user/thankyou');
 
@@ -34,21 +65,6 @@ Route::get('user/products', function () {
 Route::get('user/edituser', function () {
 	return view('edituser');
 });
-
-Route::post('user/accounts', 'homeController@update');
-
-Route::get('user/productdelete', 'ProductController@show')->name('user/productdelete');
-
-Route::Post('user/productdelete', 'ProductController@delete')->name('user/productdelete');
-
-
-Route::get('user/adminpanel', 'UserAdminController@index' )->name('user/adminpanel');
-
-Route::get('user/adminpanelCharts', 'UserAdminController@charts' )->name('user/adminpanelCharts');
-
-Route::get('user/adminEditUser', 'UserAdminController@editUser' )->name('user/adminEditUser');
-
-Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminstock');
 
 
 // Route::get('protected', ['middleware' => ['auth', 'admin'], function() {

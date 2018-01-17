@@ -46,24 +46,29 @@ class QueryController extends Controller
 
          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
-    
-         $products = DB::table('products')->where('users_id', '=', auth()->id())
-            ->join('orders', 'products.id', '=', 'orders.product_id')
+         //$updates = " UPDATE  products SET stock = stock - $ordered.quantity WHERE id = $ordered.product_id";
 
-            ->get();
+       // $update = DB::table('products')->where('id', $this->product_id)->decrement('stock', $ordered->quantity);
 
-            // UPDATE "products a  JOIN orders b ON a.quantity = b.quantity
-            //         SET a.products - b.orders
-            //         WHERE a.quantity = b.quantity";
 
-             $newOrders = \DB::table('orders')->get();
-                     foreach ($newOrders as $order){
-                     $stock = \DB::table('products')->where('id', $order->product_id)->first()->stock;
-                     if($stock > $order->quantity){
-                     \DB::table('products')->where('id', $order->product_id)->decrement('stock',$order->quantity);
-                 }
+         // $update = DB::table('products')->where('id', 1)->decrement('stock', );
+
+
 
       
+
+
+
+          $ordered = \DB::table('orders', 'ORDER BY ID DESC LIMIT 1')->where('users_id', '=', auth()->id() )->latest()->get();
+                     foreach ($ordered as $orders){               
+                     $stock = \DB::table('products')->where('id', $orders->product_id)->first()->stock;
+                     if($stock > $orders->quantity){
+                     \DB::table('products')->where('id', $orders->product_id)->latest()->decrement('stock',$orders->quantity);
+                 }}
+
+                
+                  
+
          return view('thankyou', compact(['ordered', 'products']));
 
     }
@@ -72,6 +77,3 @@ class QueryController extends Controller
 
 
 }
-
-
-//->set ( 'products.stock', '-', 'orders.quantity')

@@ -82,4 +82,17 @@ class ProductController extends Controller
 
      	return view('productdelete', compact('delete','products'));
      }
+
+     public function admindelete() {
+
+          $delete = DB::table('orders')->where('id', $_POST['id'])->delete();
+
+          $users = DB::table('users')->get();
+
+          $products = DB::table('products')
+            ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->get();
+
+          return view('adminpanel', compact(['delete','users','products']));
+     }
 }

@@ -5,6 +5,17 @@ namespace App\Http\Controllers;
 use App\order;
 use Illuminate\Http\Request;
 
+use App\Http\Controllers\Auth;
+
+use App\User;
+
+use App\Product;
+
+use DB;
+
+use Carbon\Carbon;
+
+
 class OrderController extends Controller
 {
     /**
@@ -67,9 +78,34 @@ class OrderController extends Controller
      * @param  \App\order  $order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, order $order)
+    public function update()
     {
-        //
+
+         
+
+         $_POST['id'];
+
+         $updates =  DB::table('products')
+            ->where('id',  $_POST['id'])
+            ->update([
+
+
+            'plant' => request('plant'),
+
+             'description' => request('description'),
+
+             'price' => request('price'),
+
+             'stock' => request('stock'),
+
+             'created_at' => request('created_at')
+           
+        ]);
+
+
+         $editproducts = DB::table('products')->latest()->get();  
+
+            return view('adminstock', compact(['updates', 'editproducts']));
     }
 
     /**
