@@ -58,6 +58,8 @@ Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminsto
 
 Route::post('user/editproducts', 'OrderController@update');
 
+Route::get('user/adminpurchases', 'OrderController@edit');
+
 Route::post('user/thankyou', 'QueryController@create')->name('user/thankyou');
 
 Route::get('user/products', function () {

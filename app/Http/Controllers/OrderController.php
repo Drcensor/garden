@@ -68,7 +68,7 @@ class OrderController extends Controller
      */
     public function edit(order $order)
     {
-        //
+       return view('adminpurchases');
     }
 
     /**
