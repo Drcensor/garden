@@ -47,16 +47,9 @@ class QueryController extends Controller
 
 
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
+          
 
-
-            $request->validate([
-
-                'product_id' => 'required|int',
-
-                 'quantity' => 'required|int',
-            ]);    
-
-          $update = DB::table('products')->where('id', $request['product_id'])->decrement('stock', $Request['quantity']);                
+          $update = DB::table('products')->where('id', $_POST['product_id'])->decrement('stock', $_POST['quantity']);                
 
          return view('thankyou', compact(['ordered', 'products']));
 
