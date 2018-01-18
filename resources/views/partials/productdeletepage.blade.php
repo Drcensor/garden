@@ -46,7 +46,18 @@
                   <td><input type="text" name="price" value="{{ $purss->price  }}"/></td>
                    <td><input type="text" name="price" value="{{$purss->quantity * $purss->price  }}"/></td>
                   <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
-                  <td><button type="submit" class="btn btn-danger" > Delete </button></td>
+                 <td>
+
+                   @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
+
+                                 <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> 
+                              
+                              @else
+
+                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a> 
+                
+                @endif
+                  </td>
                 </tr>
                   </form>
 
