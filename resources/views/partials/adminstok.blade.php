@@ -10,9 +10,9 @@
 
                      <div class="containers">
 
-	                	 <h1> Accounts Information of Products</h1>
+	                	 <h1> Accounts Information of Products (Editing Page)</h1>
 
-                     <table class="table table-bordered">
+                     <table class="table table-striped">
 
                                     <thead>
                                       <tr>
@@ -24,14 +24,15 @@
                                         <th>created on</th>
                                       </tr>
                                     </thead>
+
                                     <tbody>
-                                      
+                                       <?php $c = 0; ?>
                                         @foreach($editproducts as $pro)
 
                                          <form method="post" action="editproducts">
 
                                            {{csrf_field()}}
-                                       <tr>
+                                       <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
 
                       <td><input class="bigger" type="text" name="id"  value="{{$pro->id}}" readonly /> </td>
                       <td><input class="bigger" type="text" name="plant"  value="{{$pro->plant}} "/> </td>

@@ -12,7 +12,7 @@
 
 	                	 <h1> Accounts Information of Users</h1>
 
-                      <table class="table table-bordered">
+                      <table class="table table-striped">
                                     <thead>
                                       <tr>
                                         <th>User Id</th>
@@ -24,13 +24,14 @@
                                       </tr>
                                     </thead>
                                     <tbody>
+                                       <?php $c = 0; ?>
                                        @foreach($users as $user)
 
                                         <form method="post" action="adminpaneledituser">
 
                                            {{csrf_field()}}
 
-                                       <tr>
+                                       <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
                                              <td><input class="bigger1" type="text" name="id"  value="{{$user->id}} "/> </td>
                     	                	    <td><input class="bigger" type="text" name="firstname"  value="{{$user->firstname}} "/> </td>
                                             <td><input class="bigger" type="text" name="lastname"  value="{{$user->lastname}}" /> </td>

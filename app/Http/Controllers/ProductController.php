@@ -28,6 +28,7 @@ class ProductController extends Controller
 
    public function index()
     {
+         
         return view('form1');
     }
 
@@ -70,9 +71,12 @@ class ProductController extends Controller
      	$request->validate([
 
                 'id' => 'required|int',
+                'quantity' => 'required|int'
         ]);
 
         $delete = DB::table('orders')->where('id', $request['id'])->delete();
+
+        $update = DB::table('products')->where('id', $_POST['product_id'])->increment('stock', $request['quantity']);   
 
      	 $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
@@ -83,9 +87,11 @@ class ProductController extends Controller
      	return view('productdelete', compact('delete','products'));
      }
 
-     public function admindelete() {
+     public function admindelete(Request $request) {
 
           $delete = DB::table('orders')->where('id', $_POST['id'])->delete();
+
+            $update = DB::table('products')->where('id', $_POST['product_id'])->increment('stock', $request['quantity']); 
 
           $users = DB::table('users')->get();
 

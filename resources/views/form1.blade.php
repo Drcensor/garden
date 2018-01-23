@@ -1,4 +1,4 @@
-@extends('partials.master')
+@extends('partials.master') 
 
 
 @section('style')
@@ -22,6 +22,7 @@
 
                 flo/at:right;
             }
+          
         </style>
 
 @endsection

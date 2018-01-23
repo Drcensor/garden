@@ -40,19 +40,17 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+      
+
+
         return view('home');
     }
 
     public function show()
     {
 
-        //  $users = DB::table('users')->get();    
-
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
-
-          
-          // $products = $this->show(); 
-
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
@@ -74,13 +72,7 @@ class HomeController extends Controller
            
         ]);
 
-
             $products = $this->show();
-
-            
-            //  $products = DB::table('products')->where('users_id', '=', auth()->id())
-            // ->join('orders', 'products.id', '=', 'orders.product_id')
-            // ->get();
 
             return view('accounts', compact(['updates', 'products']));
     }

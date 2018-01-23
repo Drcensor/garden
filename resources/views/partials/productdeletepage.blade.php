@@ -34,13 +34,14 @@
 
              @foreach($products as $purss)
 
-                  <form method="post" action="../user/productdelete">
+                  <form method="post" action="productdelete">
 
                     {{csrf_field()}}
 
 
                     <tr>
-                  <input class="bigger" type="hidden" name="id"  value="{{$purss->id}}  "/>   
+                  <input class="bigger" type="hidden" name="id"  value="{{$purss->id}}  "/>
+                  <input class="bigger" type="hidden" name="product_id"  value="{{$purss->product_id}}  "/>    
             	    <td><input class="bigger" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
                   <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
                   <td><input type="text" name="price" value="{{ $purss->price  }}"/></td>
@@ -50,11 +51,12 @@
 
                    @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
-                                 <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> 
+                                 <a href=""><button type="submit" class="btn btn-danger" > Delete </button> </a> 
                               
                               @else
 
-                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a> 
+                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!">
+                                <button type="reset" class="btn btn-success" > Ordered </button> </a> 
                 
                 @endif
                   </td>

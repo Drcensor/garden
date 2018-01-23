@@ -14,6 +14,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
+
+        body {
+
+            background: #000066;
+            color: white;
+        }
         
         .containers{
 
@@ -31,6 +37,7 @@
 
         }
     </style>
+      @yield('style')
 </head>
 <body>
     <div id="app">

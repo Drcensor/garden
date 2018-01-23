@@ -71,7 +71,7 @@
                   <td><input class="bigger" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
                   <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
                   <td><input type="text" name="price" value="{{ $purss->price  }}"/></td>
-                   <td><input type="text" name="price" value="{{$purss->quantity * $purss->price  }}"/></td>
+                   <td><input type="text" name="totalprice" value="{{$purss->quantity * $purss->price  }}"/></td>
                   <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
                   
 

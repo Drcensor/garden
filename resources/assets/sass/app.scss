@@ -7,3 +7,29 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+
+/*
+div{
+	bor/der:solid #000066 0.5px;
+	
+}*/
+
+.bigger1 {
+
+            width: 60px;
+
+}
+
+
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  color: #000000;
+  
+}
+
+.table-time > tbody > tr:nth-of-type(even)  {
+
+  background-color: #000066;
+}

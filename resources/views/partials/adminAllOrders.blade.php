@@ -1,4 +1,4 @@
-</div>
+</div> 
  <div class="content">
 <div class="links">                         
                            <div class="containers">
@@ -21,28 +21,30 @@
                                                        </tr>
                                                     </tr>
                                                   </thead>
-         <tbody>
-
+         <tbody >
+                    <?php $c = 0; ?>
                    @foreach($products as $purss)
               
                    <form method="post" action="adminpurchases">
 
                                            {{csrf_field()}}
 
-              <tr>
+              <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
+                
+                   <input class="bigger" type="hidden" name="product_id"  value="{{$purss->product_id}}  "/>  
                   <td><input class="bigger1" type="text" name="id"  value="{{$purss->id}} "/> </td> 
                   <td><input class="bigger1" type="text" name="user_id"  value="{{$purss->users_id}} "/> </td>  
                   <td><input class="bigger1" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
                   <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
                   <td><input class="bigger1" type="text" name="price" value="£ {{ $purss->price  }}"/></td>
                    <td><input class="bigger1" type="text" name="price" value="£ {{$purss->quantity * $purss->price  }}"/></td>
-                  <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
+                  <td class ="table-time">{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
                   <td>
                       @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
                                      <button type="submit" class="btn btn-danger" > Delete </button>                              
                                  @else
-                                     <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a>                 
+                                     <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="reset" class="btn btn-success" > Ordered </button> </a>                 
                         @endif
                    </td>
                    <td> <button type="submit" class="btn btn-danger" > Delete </button>  </td>
