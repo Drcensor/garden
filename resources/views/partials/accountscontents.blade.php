@@ -1,14 +1,12 @@
 </div>
  <div class="content">
+                   <div class="title m-b-md">
+                       {{ config('app.name', 'Garden') }}<br />
+                   </div>
 
-		             @include ('../partials/nav')
+		          
 
            
-            	                <div class="title m-b-md">
-            	                   {{ config('app.name', 'Garden') }}<br />
-            	                </div>
-
-
 	                <div class="links">
 
                       <h1>Your Accounts Information</h1>
@@ -16,7 +14,6 @@
                      <div class="containers">
 
 	                	
-
                       <table class="table table-bordered">
                                     <thead>
                                       <tr>
@@ -31,7 +28,7 @@
                     	                	    <td>{{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</td>
                     	                      <td>{{$users = Auth::user()->email}}</td>
                     	                      <td>{{$users = date('d-m-Y', strtotime(Auth::user()->created_at))}}</td>
-                                            <td><a href="edituser"><button type="submit" class="btn btn-danger" > Edit </button></a></td>
+                                            <td><a href="edituser"><button type="submit" class="btn btn-danger btn-xs" > Edit </button></a></td>
 
                                     </tbody>
                         </table>
@@ -46,7 +43,7 @@
 
                          
 
-                                     <table class="table table-striped">
+                                     <table class="table table-striped"> 
           <thead>
             <tr>
                <tr>
@@ -60,13 +57,13 @@
             </tr>
           </thead>
           <tbody>
-
+               <?php $c = 0; ?>
              @foreach($products as $purss)
 
                  
 
 
-                    <tr>
+                    <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
                   <input class="bigger" type="hidden" name="id"  value="{{$purss->id}} readonly "/>   
                   <td><input class="bigger" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
                   <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
@@ -79,11 +76,11 @@
 
                    @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
-                                 <a href="productdelete"><button type="submit" class="btn btn-danger" > Delete </button> </a> 
+                                 <a href="productdelete"><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a> 
                               
                               @else
 
-                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success" > Ordered </button> </a> 
+                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success btn-xs" > Ordered </button> </a> 
                 
                 @endif
                   </td>

@@ -5,7 +5,7 @@
 
                   <div class="containers">
 
-	                	 <h1> Accounts: Information of New Users</h1>
+	                	 <h1> Accounts: Information of New Users Less Than a Month Old</h1>
 
                       <table class="table table-striped">
                                     <thead>
@@ -41,7 +41,7 @@
                      <div class="links">                         
                            <div class="containers">
 
-                           <h1> Purchase Information of Users</h1>
+                           <h1> Purchase Information of Users From The Last 6 Days</h1> 
 
                                      <table class="table table-striped" >
                                                   <thead>
@@ -65,7 +65,7 @@
                    
 
                                            {{csrf_field()}}
-                      @if( date("d/m/Y") >= date('d-m-Y', strtotime(($purss->created_at) . '+ 6 day'))  )
+                      @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 6 day'))  )
               <tr>
                   <td>{{$purss->id}}  </td> 
                   <td>{{$purss->users_id}}  </td>  

@@ -31,7 +31,7 @@
             </tr>
           </thead>
           <tbody>
-
+              <?php $c = 0; ?>
              @foreach($products as $purss)
 
                   <form method="post" action="productdelete">
@@ -39,7 +39,7 @@
                     {{csrf_field()}}
 
 
-                    <tr>
+                    <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
                   <input class="bigger" type="hidden" name="id"  value="{{$purss->id}}  "/>
                   <input class="bigger" type="hidden" name="product_id"  value="{{$purss->product_id}}  "/>    
             	    <td><input class="bigger" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
@@ -68,6 +68,6 @@
                         </table>
 	                </div>
 
-                  <a href="accounts"><button type="submit" class="btn btn-warning" > Return to Accounts </button></a>
+                  <a href="accounts"><button type="submit" class="btn btn-warning" > Return to Accounts </button></a><br /> &nbsp;
 
                 </div>

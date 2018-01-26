@@ -28,8 +28,23 @@ class ProductController extends Controller
 
    public function index()
     {
+         $basket = DB::table('basket')->where('users_id', '=', auth()->id())->latest()->get();
+
+          $products = DB::table('products')->where('users_id', '=', auth()->id())
+            ->join('basket', 'products.id', '=', 'basket.product_id')
+            ->get();
+
+              $users = DB::table('users')->get();
+
+              $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
+            //  $products = DB::table('products')->where('users_id', '=', auth()->id())
+            // ->join('orders', 'products.id', '=', 'orders.product_id')
+            // ->get();
+
+           return view('form1', compact(['basket', 'users','products', 'baskets'])  );
          
-        return view('form1');
+        //return view('form1');
     }
 
 
@@ -51,7 +66,9 @@ class ProductController extends Controller
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-     	return view('productdelete', compact('products'));
+            $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
+     	return view('productdelete', compact('products', 'baskets'));
      }
 
 
@@ -82,9 +99,9 @@ class ProductController extends Controller
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
  
-     	
+     	$baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
-     	return view('productdelete', compact('delete','products'));
+     	return view('productdelete', compact('delete','products', 'baskets'));
      }
 
      public function admindelete(Request $request) {

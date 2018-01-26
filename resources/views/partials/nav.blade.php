@@ -1,9 +1,15 @@
 
 
 					<div class="links">
-		                    <a href="form1">form to order</a>
-		                    <a href="#">page to edit</a>
-		                    <a href="products">Product</a>
-		                    <a href="https://forge.laravel.com">Forge</a>
-		                    <a href="https://github.com/laravel/laravel">GitHub</a>
+						    <a href="products">Product</a>
+		                    <a href="form1">Order Form </a>
+		                    <a href="#">About Us</a>
+		                    <a href="#">contact Us</a>
+		                    <a href="#">Site Map</a>
 		            </div>
+
+
+
+
+
+		                   

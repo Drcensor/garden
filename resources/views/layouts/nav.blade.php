@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Garden') }}</title>
 
+    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -33,7 +35,7 @@
         #footer {
 
             min-height: 100px;
-            background: grey;
+            background: grey; 
 
         }
     </style>

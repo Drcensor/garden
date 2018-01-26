@@ -40,11 +40,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+          $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
-      
+        $orders = DB::table('orders')->where('users_id', '=', auth()->id())->count();
 
-
-        return view('home');
+        return view('home', compact('orders', 'baskets'));
     }
 
     public function show()
@@ -52,11 +52,13 @@ class HomeController extends Controller
 
           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
 
+         $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-           return view('accounts', compact(['ordered', 'products'])  );
+           return view('accounts', compact(['ordered', 'products', 'baskets'])  );
     }
 
     public function update()

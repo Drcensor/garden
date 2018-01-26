@@ -25,4 +25,4 @@
 
     @include('partials.adminFooter')
 
-@endsection
+@endsection 

@@ -10,7 +10,7 @@
 
                      <div class="containers">
 
-	                	 <h1> Accounts Information of Users</h1>
+	                	 <h1> Accounts Information of Users (Edit Page)</h1>
 
                       <table class="table table-striped">
                                     <thead>
@@ -19,6 +19,7 @@
                                         <th>First name</th>
                                         <th>Last Name</th>
                                         <th>Email</th>
+                                        <th>Admin</th>
                                         <th>Created On</th>
                                         <th>Edit</th>
                                       </tr>
@@ -36,6 +37,7 @@
                     	                	    <td><input class="bigger" type="text" name="firstname"  value="{{$user->firstname}} "/> </td>
                                             <td><input class="bigger" type="text" name="lastname"  value="{{$user->lastname}}" /> </td>
                     	                      <td><input class="bigger" type="text" name="email"  value="{{$user->email}}" /> </td>
+                                             <td><input class="bigger" type="text" name="admin"  value="{{$user->admin}} "/> </td>
                     	                      <td><input class="bigger" type="text" name="created_at"  value="{{$user->created_at}}" /> </td>
                                             <td><button type="submit" class="btn btn-danger" > Edit </button></td>
 

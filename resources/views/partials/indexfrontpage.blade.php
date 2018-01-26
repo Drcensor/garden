@@ -1,4 +1,4 @@
-
+ <div class="centering">
 
 
 <div class="onebyone"><!--image enlarger requires multizoom and mulitizoom1 js files to work  -->
@@ -51,3 +51,4 @@
 						</div>
 
 		</div>
+</div>

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Basket extends Model
 {
-   public function user(){
+    public function user(){
 
         return $this->belongsTo(User::class);
     }
@@ -16,8 +16,9 @@ class Order extends Model
         return $this->belongsTo(product::class);
     }
 
-     public function basket(){
 
-        return $this->belongsTo(Basket::class);
+    public function order(){
+
+        return $this->hasMany(Order::class);
     }
 }

@@ -10,7 +10,13 @@ class User extends Authenticatable
 {
     public function order(){
 
-        return $this->hasMany(Order::class);
+        return $this->hasMany(Order::class);//hasMany = gives to!! & belongsTo means pulls from!!
+    }
+
+
+     public function basket(){
+
+        return $this->hasMany(Basket::class);
     }
 
 

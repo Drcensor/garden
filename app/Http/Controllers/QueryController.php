@@ -31,6 +31,14 @@ class QueryController extends Controller
          return view('thankyou', ['products' => $products]);
     }
 
+
+    public function products() {
+
+        $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
+        return view('products', compact('baskets'));
+    }
+
     
 
       public function create()
@@ -42,17 +50,21 @@ class QueryController extends Controller
                  'product_id' => request( 'product_id'),
                 'quantity' => request('quantity')
                
-             ]);
+             ]);    //inserting a order to db
 
+           $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();   //selecting all from orders to display
 
-
-          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
+           $products = DB::table('products')->get();
           
+          $update = DB::table('products')->where('id', $_POST['product_id'])->decrement('stock', $_POST['quantity']);  //returning stock to database 
 
-          $update = DB::table('products')->where('id', $_POST['product_id'])->decrement('stock', $_POST['quantity']);                
+           $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
 
-         return view('thankyou', compact(['ordered', 'products']));
+         return view('thankyou', compact(['ordered', 'baskets']));
 
     }
+
+
+
 
 }

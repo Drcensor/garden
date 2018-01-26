@@ -3,7 +3,7 @@
 <div class="links">                         
                            <div class="containers">
 
-                           <h1> Purchase Information of Users</h1>
+                           <h1> Purchase Information of Users (delete Page)</h1>
 
                                      <table class="table table-striped" >
                                                   <thead>

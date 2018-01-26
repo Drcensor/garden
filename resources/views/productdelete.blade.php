@@ -12,6 +12,13 @@
                 text-align: center;
                 margin: auto;
             }
+
+             .even input{    color: #000;    border: 0px;    background-color: #f9f9f9;
+             }
+
+
+            .odd input{ background-color:#fff; color: #000; border: 0px;
+            }
            
      </style>
 

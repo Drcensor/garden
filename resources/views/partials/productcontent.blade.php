@@ -1,20 +1,10 @@
- 
-	</div>	
-<div id="centering">
-
-					<div class="content"><div>
-        	 	
-		           			  @include ('../partials/nav')
-		             </div>	
+ <div class="content">
+ 					 @include ('partials/header')
+		
+<div id="centering">	
            
-	                <div class="title m-b-md">
-	                		   {{ config('app.name', 'Garden') }}<br />
-
-	                </div>
+               
 	               
-
-
-
 				<div class="onebyone"><!--image enlarger requires multizoom and mulitizoom1 js files to work  -->
 
 							<img id="image1" class="sidebyside"  src="../images/pointsettiasmall.jpg" alt="plant of the pointsettia"/>
@@ -31,37 +21,59 @@
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Pointsettia</strong><br />
-						a perfect gift for you<br />
-						<a id="1" href="form1">put in Basket &#163;5.99</a><br /> 
-						
-						</p>
-						</div>
+						a perfect gift for you</p>
+
+					<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="1" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs "> put in Basket &#163;5.99 </button> <br />
+                    </form>
+																	
+					 </div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Hyacinth</strong><br />
-						a perfect gift for you<br />
-						<a id="2" href="#">put in Basket &#163;4.99</a><br />
+						a perfect gift for you</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="2" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;4.99 </button> <br />
+                    </form>
 						
-						</p>
+						
 						</div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Pansy</strong><br />
-						a perfect gift for you<br />
-						<a id="3" href="#">put in Basket &#163;3.99</a><br />
-						
-						</p>
+						a perfect gift for you</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="3" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;3.99 </button> <br />
+                    </form>
 						</div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Geranium</strong><br />
-						a perfect gift for you<br />
-						<a id="4" href="#">put in Basket &#163;3.99</a><br />
-						
-						</p>
+						a perfect gift for you</p>
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="4" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;3.99 </button> <br />
+                    </form>
 						</div>
 
 		</div>
@@ -81,33 +93,57 @@
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Cyclamen</strong><br />
-						a perfect gift for you<br />
-						<a id="5" href="#">put in Basket &#163;4.99</a><br />
-						</p>
+						a perfect gift for you</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="5" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;4.99 </button> <br />
+                    </form>
 						</div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Spider Plant</strong><br />
-						a perfect gift for you<br />
-						<a id="6" href="#">put in Basket &#163;5.99</a><br />						
-						</p>
+						a perfect gift for you</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="6" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;5.99 </button> <br />
+                    </form>
 						</div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Orchid</strong><br />
-						a perfect gift for you<br />
-						<a id="7" href="#">put in Basket &#163;7.99</a><br />						
-						</p>
+						a perfect gift for you</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="7" />                         
+                     <input class="bigger1" type="hidden" name="quantity"  value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;7.99 </button> <br />
+                    </form>
 						</div>
 
 						<div class="innerbox">
 						<p class="cen">
 						<strong>Rainbow rose</strong><br />
-						a perfect gift for You<br />
-						<a id="8" href="#">put in Basket &#163;6.99</a><br />						
-						</p>
+						a perfect gift for You</p>
+
+						<form method="post" action="../user/products ">
+				      {{csrf_field()}}
+                     <input type="hidden" name="id" value="" />
+                     <input type="hidden" name="product_id" value="8" />                         
+                     <input class="bigger1" type="hidden" name="quantity" min="1" max="5" value="1"/>
+                     <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;6.99 </button> <br />
+                    </form>
 						</div>
 
 			</div>

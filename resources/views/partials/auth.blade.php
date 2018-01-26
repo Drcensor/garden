@@ -48,8 +48,15 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+
+                         <li><a href="products">Product</a></li>
+                            <li><a href="form1">Order Form </a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">contact Us</a></li>
+                            <li style="margin-right: 100px"><a href="#">Site Map</a></li>
+                        <li>    <a href="form1"><img src="../images/trolly.png"> {{  $baskets }}</a>   </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
                                 </a>
 
@@ -74,7 +81,7 @@
                                     <li>
 
                                         @auth
-                        <a href="{{ url('/user') }}">Home</a>
+                        <a href="{{ url('/user') }}">Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>

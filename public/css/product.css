@@ -23,6 +23,14 @@ div {
 	
 }
 
+.centering {
+
+	width: 1000px;
+	height: 350px;
+	margin: auto;
+	
+}
+
 .targetarea { /* CSS for container div(s) of the zoomable image */
 	width: 325px; /* wide or wider than the widest zoomable image */
 	height: 338px; /* high or higher than the tallest zoomable image */

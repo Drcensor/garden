@@ -19,8 +19,8 @@
                         {  
                         window.location="accounts"; 
                         } 
-                        document.write("You will be redirected to your accounts page in 3 seconds"); 
-                        setTimeout('Redirect()', 3000);   
+                        document.write("You will be redirected to your accounts page in 2 seconds"); 
+                        setTimeout('Redirect()', 1500);   
                     </script>
                            
                         

@@ -21,6 +21,11 @@ class UserAdmin extends Model
         return $this->belongsTo(User::class);
     }
 
+     public function basket(){
+
+        return $this->hasMany(Basket::class);
+    }
+
 
 
      protected $fillable = [
