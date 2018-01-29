@@ -40,7 +40,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-          $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+         // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
         $orders = DB::table('orders')->where('users_id', '=', auth()->id())->count();
 
@@ -49,36 +49,42 @@ class HomeController extends Controller
 
     public function show()
     {
-
-          $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
-
-         $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+            $users = DB::table('users')->where('id', '=', auth()->id())->latest()->get(); 
+            $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
+          //  $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
-
-           return view('accounts', compact(['ordered', 'products', 'baskets'])  );
+            
+           return view('accounts', compact(['users', 'ordered', 'products', 'baskets'])  );
     }
+
 
     public function update()
     {
 
-         $users = DB::table('users')->get();
-
        $updates =  DB::table('users')
             ->where('id', '=', auth()->id())
-            ->update(['firstname' => ucfirst(request('firstname')),
+            ->update([
+            'firstname' => ucfirst(request('firstname')),
              'lastname' => ucfirst(request('lastname')),
-            'email' => request('email')
-           
+            'email' => request('email'),
+            'number_street' => request('number_street'),
+            'city' => request('city'),
+            'county' => request('county'),
+            'postcode' => request('postcode')           
         ]);
 
-            $products = $this->show();
-
-            return view('accounts', compact(['updates', 'products']));
+            return $this->show();
     }
 
+
+    public function edit() {
+        // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
+        return view('edituser', compact('baskets'));
+    }
     
 
 }

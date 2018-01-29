@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use DB;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('*', function ($view)
+        {
+             $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+
+            $view->with('baskets', $baskets);
+        });
     }
 
     /**

@@ -19,6 +19,10 @@
                                       <tr>
                                         <th>Name</th>
                                         <th>Email</th>
+                                         <th>Number Street</th>
+                                        <th>City</th>
+                                         <th>County</th>
+                                        <th>Post Code</th>
                                         <th>Created On</th>
                                         <th>Edit</th>
                                       </tr>
@@ -27,6 +31,10 @@
 
                     	                	    <td>{{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</td>
                     	                      <td>{{$users = Auth::user()->email}}</td>
+                                            <td>{{$users = Auth::user()->number_street}}</td>
+                                            <td> {{$users = Auth::user()->city}}</td>
+                                            <td>{{$users = Auth::user()->county}}</td>
+                                            <td>{{$users = Auth::user()->postcode}}</td>
                     	                      <td>{{$users = date('d-m-Y', strtotime(Auth::user()->created_at))}}</td>
                                             <td><a href="edituser"><button type="submit" class="btn btn-danger btn-xs" > Edit </button></a></td>
 
@@ -76,11 +84,11 @@
 
                    @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
-                                 <a href="productdelete"><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a> 
+                                 <a href="productdelete"><button type="submit" class="btn btn-danger btn-xs " > Delete </button> </a> 
                               
                               @else
 
-                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success btn-xs" > Ordered </button> </a> 
+                               <a href="#" data-toggle="tooltip" title="Your order is on it's way!"><button type="submit" class="btn btn-success btn-xs disabled" > Ordered </button> </a> 
                 
                 @endif
                   </td>

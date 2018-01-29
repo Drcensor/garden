@@ -33,7 +33,7 @@
                                          @endforeach
                                     </tbody>
                         </table>
-                        <a href="adminpaneledituser"><button type="submit" class="btn btn-success" > Edit Users Page </button></a>
+                        <a href="adminpaneledituser"><button type="submit" class="btn btn-success btn-xs" > Edit Users Page </button></a>
 	                  </div>
                     </div>
 
@@ -81,7 +81,7 @@
                   @endforeach
           </tbody>
                         </table>
-                   <a href="adminpurchases"><button type="submit" class="btn btn-success" > Edit Purchases Page </button></a>
+                   <a href="adminpurchases"><button type="submit" class="btn btn-success btn-xs" > Edit Purchases Page </button></a>
 
                         </div>
                         </div><!-- end of container-->

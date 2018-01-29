@@ -1,0 +1,327 @@
+
+           /* div {
+
+                bor/der: 1px black solid; 
+            }*/
+
+            #form1{
+
+                width: 950px;
+               
+                margin: auto;
+            }
+
+             .bigger2 {
+
+                width: 35px;
+            }
+
+            .bigger3 {
+
+                width: 70px;
+            }
+
+            .table {
+            
+            }
+
+            .content-left {
+
+                float: left;
+                width: 30%;
+                margin-left: 10px;
+            }
+
+            .side-bar {
+                float: left;
+                width: 22%;
+                margin: 0px 0px 0px 10px;
+                min-width: 22%;
+                min-height: 80%;
+                padding-bottom: 200px;
+                background-color: #f9f9f9;
+
+            }
+
+            .content-right {
+
+                float: right;
+                width: 45%;
+                padding: 20px 0px 0px 0px;
+                margin-right: -10px;
+                
+            }
+
+            .row {
+                width: 100%;
+                margin: 0px 0px;            
+            }
+           
+
+             .even input{    color: #000;    border: 0px;    background-color: #f9f9f9;
+             }
+
+
+            .odd input{ background-color:#fff; color: #000; border: 0px;
+            }
+
+            .smaller5 {
+                display: none;
+            }
+
+
+            @media screen and (max-width: 280px) {
+    .side-bar {
+                display: none;
+                float: left;
+                width: 90%;
+                margin: 0px 0px 0px 10px;
+               
+                min-height: 80%;
+                padding-bottom: 20px;
+                background-color: #f9f9f9;
+
+            }
+
+    .title  {
+        display: none;
+    }
+
+    .table-striped {
+        display:none;
+    }
+
+    .content-left {
+
+                float: right;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .firstone {
+
+                float: left;
+                width: 90%;
+                margin-left: 10px;
+
+            }
+
+            .content-right {
+
+                float: left;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .hid {
+                display: none;
+
+            }
+
+            .smaller1 {
+                width: 20px;
+            }
+            .smaller2 {
+                width: 50px;
+                font-size: 10px;
+            }
+
+            .smaller3 {             
+                font-size: 10px;
+            }
+
+             .smaller4 {
+               display: none;
+            }
+
+             .smaller5 {
+               display: inline;
+            }
+
+            .fon {
+
+                font-size: 10px;
+            }
+
+            .media1 {
+                display: none;
+            }
+
+}  
+
+ @media only screen and (max-width: 600px) and (min-width: 280px) {
+    .side-bar {
+                display: none;
+                float: left;
+                width: 90%;
+                margin: 0px 0px 0px 10px;
+               
+                min-height: 80%;
+                padding-bottom: 20px;
+                background-color: #f9f9f9;
+
+            }
+
+    .title  {
+        display: none;
+    }
+
+    .content-left {
+
+                float: right;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .firstone {
+
+                float: left;
+                width: 90%;
+                margin-left: 10px;
+
+            }
+
+            .content-right {
+
+                float: left;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .hid {
+                display: none;
+
+            }
+
+            .smaller1 {
+                width: 20px;
+            }
+            .smaller2 {
+                width: 50px;
+                font-size: 10px;
+            }
+
+            .smaller3 {             
+                font-size: 10px;
+            }
+
+             .smaller4 {
+               display: none;
+            }
+
+             .smaller5 {
+               display: inline;
+            }
+
+            .fon {
+
+                font-size: 10px;
+            }
+
+            .media1 {
+                display: none;
+            }
+
+}     
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+    .side-bar {
+                display: none;
+                float: left;
+                width: 90%;
+                margin: 0px 0px 0px 10px;
+               
+                min-height: 80%;
+                padding-bottom: 20px;
+                background-color: #f9f9f9;
+
+            }
+
+    .title  {
+        display: none;
+    }
+
+    .content-left {
+
+                float: right;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .firstone {
+
+                float: left;
+                width: 90%;
+                margin-left: 10px;
+
+            }
+
+            .content-right {
+
+                float: left;
+                width: 90%;
+                margin: 0px 10px;
+            }
+
+            .hid {
+                display: none;
+
+            }
+
+            .smaller1 {
+                width: 20px;
+            }
+            .smaller2 {
+                width: 50px;
+                font-size: 10px;
+            }
+
+            .smaller3 {             
+                font-size: 10px;
+            }
+
+             .smaller4 {
+               display: none;
+            }
+
+             .smaller5 {
+               display: inline;
+            }
+
+            .fon {
+
+                font-size: 10px;
+            }
+
+            .media1 {
+                display: none;
+            }
+
+} 
+
+@media only screen and (max-width: 1300px) and (min-width: 800px) { 
+
+              .side-bar {
+                float: left;
+                width: 20%;
+                margin: 0px 0px 0px 10px;
+               
+                min-height: 80%;
+                padding-bottom: 20px;
+                background-color: #f9f9f9;
+
+            }
+
+             .content-left {
+
+                float: left;
+                width: 20%;
+               
+            }
+             .content-right {
+
+                float: right;
+                width: 50%;
+               
+            }
+}   

@@ -1,10 +1,5 @@
 
-
- <div class="content">
- 					 @include ('partials/header')
-		           
-
-	 <div class="content-left side-bar">
+ <div class="content-left side-bar">
     <h3>New sideBar</h3>
         <div class="panel panel-default">
          New Sidebar
@@ -26,7 +21,28 @@
           hello
 
         </div>
+         <div class="panel panel-default">
+          hello
+
+        </div>
+        <div class="panel panel-default">
+          hello
+
+        </div>
+        <div class="panel panel-default">
+          hello
+
+        </div>
+        <div class="panel panel-default">
+          hello
+
+        </div>
    </div>
+ <div class="content">
+ 					 @include ('partials/header')
+		           
+
+	
 
     <div class="content-left"> 
 									
@@ -218,60 +234,59 @@
 
 	<div class="content-right">
                         <h3>for your Information</h3>
-                     <div class=" row">
-                         <div class="col-md-11 col-md-offset-1">
+                     <div class="row secondtwo ">
+                         <div class="col-md-11.5 col-md-offset-0.5">
                              <div class="panel panel-default">
                                   <div class="panel-heading">Basket</div>
 
                                            <div class="panel-body">
 
-                                           
-
-
-                                         <table class="table table-striped"> 
+                                          
+                                         <table class="table table-striped" > 
                                           
 
                                               <thead>
-                                                <tr>
-                                                   <tr>
-                                                      <th>Quantity</th>
-                                                      <th>Plant Name</th>
-                                                      <th>Price</th>
-                                                      <th>Total Price</th>
-                                                      <th>Time Purchased</th>
-                                                      <th>Cancel</th>
-                                                      <th>Purchase</th>
+                                                
+                                                   <tr class="fon">
+                                                      <th class="fon"> Quantity  </th>
+                                                      <th> Plant Name </th>
+                                                      <th class="hid">Price</th>
+                                                      <th> Total Price </th>
+                                                      <th class="hid">Time Purchased</th>
+                                                      <th class="hid">Cancel</th>
+                                                      <th class="hid">Purchase</th>
                                                    </tr>
-                                                </tr>
+                      
                                               </thead>
-                                              <tbody>
+                                              <tbody class="smaller2">
                                                    <?php $c = 0; ?>
                                                  @foreach($products as $purss)
-
+                                                         
                                                        <form method="post" action="../user/form1redirect ">
 
                                                     {{csrf_field()}}
 
-
-                                                        <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
+                                                    
+                                                        <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?> smaller3">
                                                      
                                                       <input class="bigger2" type="hidden" name="id"  value="{{$purss->id}}  "/>
                                                       <input class="bigger2" type="hidden" name="users_id"  value="{{$purss->users_id}}  "/>
                                                       <input class="bigger" type="hidden" name="product_id"  value="{{$purss->product_id}}  "/>       
-                                                      <td><input class="bigger2" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
-                                                      <td><input class="bigger3" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
-                                                      <td><input class="bigger2" type="text" name="price" value="{{ $purss->price  }}"/></td>
+                                                      <td><input class="bigger2 smaller1" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
+                                                      <td class="smaller2"><input class="bigger3" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
+                                                      <td><input class="bigger2 hid smaller1" type="text" name="price" value="{{ $purss->price  }}"/></td>
                                                       <td><input class="bigger2" type="text" name="totalprice" value="{{$purss->quantity * $purss->price  }}"/></td>
-                                                      <td>{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>                 
-                                                      <td><a href="../user/form1"><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a></td>               
-                                                      <td><a href=""> <button type="submit" class="btn btn-success btn-xs" > Order </button> </a></td> 
-                
-             
+                                                      <td class="hid">{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td> 
 
+                                                      <td class="smaller4"><a href="../user/form1"><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a></td>
+                                                      <td class="smaller4"><a href=""> <button type="submit" class="btn btn-success btn-xs" > Order </button> </a></td>
+                                                      
 
-                                                     
-
+                                                       <td class="smaller5"><br /><a href="../user/form1"><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a></td>
+                                                      <td class="smaller5"><a href=""> <button type="submit" class="btn btn-success btn-xs" > Order </button> </a></td>                 
+                                                                                                     
                                                     </tr>
+                                                  
                                                      </form>
 
                                                       @endforeach
@@ -290,12 +305,9 @@
                                 </div>                 
                             </div>
                         </div>
-                    </div>
-                </div>
-
-    <div class="content-right">
-                     <div class="row ">
-                         <div class="col-md-11 col-md-offset-1">
+               
+                     <div class="row firstone ">
+                         <div class="col-md-11.2 col-md-offset-0.8">
                              <div class="panel panel-default">
                                   <div class="panel-heading">Offers</div>
 

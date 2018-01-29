@@ -1,4 +1,9 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/css/main.css": "/css/main.css",
+    "/css/multizoom.css": "/css/multizoom.css",
+    "/css/product.css": "/css/product.css",
+    "/css/formMedia.css": "/css/formMedia.css",
+    "/js/cookielawinfo.js": "/js/cookielawinfo.js"
 }

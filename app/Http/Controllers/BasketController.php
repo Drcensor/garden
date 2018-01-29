@@ -56,6 +56,9 @@ class BasketController extends Controller
             return view('products', compact('baskets'));    
     }
 
+
+    
+
       public function complete(Request $request)
     {
 

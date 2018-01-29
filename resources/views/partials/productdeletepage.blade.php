@@ -51,12 +51,12 @@
 
                    @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 1 day'))  )
 
-                                 <a href=""><button type="submit" class="btn btn-danger" > Delete </button> </a> 
+                                 <a href=""><button type="submit" class="btn btn-danger btn-xs" > Delete </button> </a> 
                               
                               @else
 
                                <a href="#" data-toggle="tooltip" title="Your order is on it's way!">
-                                <button type="reset" class="btn btn-success" > Ordered </button> </a> 
+                                <button type="reset" class="btn btn-success btn-xs" > Ordered </button> </a> 
                 
                 @endif
                   </td>

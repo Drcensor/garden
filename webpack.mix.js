@@ -12,4 +12,12 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/cookielawinfo.js', 'public/js')
+
+
+.sass('resources/assets/sass/app.scss', 'public/css'); 
+
+mix.sass('resources/assets/sass/main.scss', 'public/css');
+mix.sass('resources/assets/sass/multizoom.scss', 'public/css');
+mix.sass('resources/assets/sass/product.scss', 'public/css');
+mix.sass('resources/assets/sass/formMedia.scss', 'public/css');

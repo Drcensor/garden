@@ -1,130 +1,140 @@
- 
-div {
+/*div {
 
 	bor/der: 1px black solid;
-}
-.containers{
-    width:1000px
-    text-align: center;
-    margin: auto;
-}
-#footer {
+}*/
 
-    min-height: 100px;
-    bottom: 0px;
-    
+.containers {
+  width: 1000px;
+  text-align: center;
+  margin: auto;
+}
+
+#footer {
+  min-height: 100px;
+  bottom: 0px;
 }
 
 #centering {
-
-	width: 1000px;
-	height: 700px;
-	margin: auto;
-	
+  width: 1000px;
+  height: 700px;
+  margin: auto;
 }
 
 .centering {
-
-	width: 1000px;
-	height: 350px;
-	margin: auto;
-	
+  width: 1000px;
+  height: 350px;
+  margin: auto;
 }
 
-.targetarea { /* CSS for container div(s) of the zoomable image */
-	width: 325px; /* wide or wider than the widest zoomable image */
-	height: 338px; /* high or higher than the tallest zoomable image */
-	margin-top:3px;
+.targetarea {
+  /* CSS for container div(s) of the zoomable image */
+  width: 325px;
+  /* wide or wider than the widest zoomable image */
+  height: 338px;
+  /* high or higher than the tallest zoomable image */
+  margin-top: 3px;
 }
 
-#two { /* Added CSS for second target div of zoomable images */
-	height: 243px; /* high or higher than the tallest zoomable image */
+#two {
+  /* Added CSS for second target div of zoomable images */
+  height: 243px;
+  /* high or higher than the tallest zoomable image */
 }
 
-.targetarea img { /* zoomable image */
-	margin: auto; /* for horizontal centering */
-	display: block; /* also for horizontal centering */
-	position: relative; /* along with on the fly calculations in script, for vertical centering */
-	border-width: 0;
+.targetarea img {
+  /* zoomable image */
+  margin: auto;
+  /* for horizontal centering */
+  display: block;
+  /* also for horizontal centering */
+  position: relative;
+  /* along with on the fly calculations in script, for vertical centering */
+  border-width: 0;
 }
 
-.thumbs { /* divs holding the trigger links - styles optional, used here to center their links below their respective zoomable image */
-	padding-top: 25px;
-	width: 325px;
-	text-align: center;
+.thumbs {
+  /* divs holding the trigger links - styles optional, used here to center their links below their respective zoomable image */
+  padding-top: 25px;
+  width: 325px;
+  text-align: center;
 }
 
-.thumbs a { /* trigger links on the thumbnail images */
-	text-decoration: none; /* avoid underlines of images, text or spaces in these links */
+.thumbs a {
+  /* trigger links on the thumbnail images */
+  text-decoration: none;
+  /* avoid underlines of images, text or spaces in these links */
 }
 
-.thumbs img { /* trigger images - the thumbnails used to load new zoomable images into the targetarea */
-	border-width: 0; /* avoid default borders in some browsers */
+.thumbs img {
+  /* trigger images - the thumbnails used to load new zoomable images into the targetarea */
+  border-width: 0;
+  /* avoid default borders in some browsers */
 }
 
-#description, #description2 {
-	position: absolute; /* required for description folows image bottom (descpos: true) */
-	width: 325px; /* should be width of zoomable image container (.targetarea) */
-	text-align: center;
-	font: bold 95% sans-serif;
-	margin-top: 3px; /* when following image bottom, this sets a fixed distance for that */
-	color: #222;
-	background-color: #fff;
+#description,
+#description2 {
+  position: absolute;
+  /* required for description folows image bottom (descpos: true) */
+  width: 325px;
+  /* should be width of zoomable image container (.targetarea) */
+  text-align: center;
+  font: bold 95% sans-serif;
+  margin-top: 3px;
+  /* when following image bottom, this sets a fixed distance for that */
+  color: #222;
+  background-color: #fff;
 }
+
 /*css below is for the image and text box*/
 
-
 /*this is for products page*/
-.onebyone{
-	floa/t:left;
-	height:210px;
-	width:99%;
-	ma/rgin:10px 0 0 0;
-	margin: auto;
+
+.onebyone {
+  height: 210px;
+  width: 99%;
+  margin: auto;
 }
 
 .onebyone img {
-	width:200px;
-	height:200px;
-	border:0px;
-	margin:0 0 0 30px;
-	
+  width: 200px;
+  height: 200px;
+  border: 0px;
+  margin: 0 0 0 30px;
 }
-.sidebyside{
-	float:left;
-	margin-left: 30px;
-	
+
+.sidebyside {
+  float: left;
+  margin-left: 30px;
 }
-.outerbox{
-	floa/t:left;
-	height:80px;
-	width:99%;
-	padding:0px;
-	marg/in:10px 0 10px 0;
-	margin: auto;
+
+.outerbox {
+  height: 80px;
+  width: 99%;
+  padding: 0px;
+  margin: auto;
 }
-.innerbox{
-	float:left;
-	border:solid #666 1px;
-	height:80px;
-	width:198px;
-	margin:3px 0px 0px 30px;
+
+.innerbox {
+  float: left;
+  border: solid #666 1px;
+  height: 80px;
+  width: 198px;
+  margin: 3px 0px 0px 30px;
 }
+
 .innerbox p {
-	padding:0px;
-	margin:0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 /* h1 on the about us page and Contact page*/
-.cen{
-	text-align:center;
-	font-weight: bold;
-}
-.col{
-	color:red;
+
+.cen {
+  text-align: center;
+  font-weight: bold;
 }
 
-   
+.col {
+  color: red;
+}
 
-
-     

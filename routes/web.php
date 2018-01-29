@@ -23,6 +23,8 @@ Route::get('user/accounts', 'HomeController@show')->name('user/accounts');
 
 Route::post('user/accounts', 'homeController@update');
 
+Route::get('user/edituser', 'HomeController@edit')->name('user/edituser');
+
 
 Route::get('user/form1', 'ProductController@index')->name('user/form1');
 
@@ -74,9 +76,9 @@ Route::post('user/products', 'BasketController@create')->name('user/products');
 
 Route::post('user/form1redirect', 'BasketController@complete')->name('user/form1redirect');
 
-Route::get('user/edituser', function () {
-	return view('edituser');
-});
+// Route::get('user/edituser', function () {
+// 	return view('edituser');
+// });
 
 
 // Route::get('protected', ['middleware' => ['auth', 'admin'], function() {

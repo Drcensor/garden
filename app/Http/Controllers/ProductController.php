@@ -36,7 +36,7 @@ class ProductController extends Controller
 
               $users = DB::table('users')->get();
 
-              $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+             // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
             //  $products = DB::table('products')->where('users_id', '=', auth()->id())
             // ->join('orders', 'products.id', '=', 'orders.product_id')
@@ -66,7 +66,7 @@ class ProductController extends Controller
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
 
-            $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+           // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
      	return view('productdelete', compact('products', 'baskets'));
      }
@@ -99,7 +99,7 @@ class ProductController extends Controller
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
  
-     	$baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+     //	$baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
      	return view('productdelete', compact('delete','products', 'baskets'));
      }

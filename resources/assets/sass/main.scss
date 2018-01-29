@@ -1,0 +1,120 @@
+ html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Raleway', sans-serif;
+                font-weight: 100;
+                height: 100vh;
+                margin: 0;
+            }
+
+           
+
+input {
+    border: transparent;
+}
+
+            .full-height {
+                height: 100vh;
+            }
+
+
+
+            .full-heights {
+                height: 70px;
+            }
+
+
+            .flex-center {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+
+            .position-ref {
+                position: relative;
+            }
+
+            .top-right {
+                position: absolute;
+                right: 10px;
+                top: 18px;
+            }
+
+            .content {
+                text-align: center;
+            }
+
+            .title {
+                font-size: 84px;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            .m-b-md {
+                margin-bottom: 30px;
+            }
+           
+
+#footer {
+   min-height: 100px;
+   margin-bottom:0px;
+   bottom: 0px;
+    float:left;
+    width:100%;
+    min-width:100px;
+    height:10%;
+    margin:0px;
+    background-color:#949470;
+}
+            
+
+#media{
+    float:right;
+    height:60px;
+    margin:30px 30px 10px 0;
+}
+#money{
+    margin-right:60px;
+}
+.media1{
+     float:right;
+    margin-right:20px;
+}
+
+.number-wrapper {
+  position: relative;
+ }
+
+.number-wrapper:after,
+.number-wrapper:before {
+  position: absolute;
+  right: 5px;
+  width: 1.6em;
+  height: .9em;
+  font-size: 10px;
+  pointer-events: none;
+  background: #fff;
+ 
+}
+
+.number-wrapper:after {
+  color: blue;
+  content: "\25B2";
+  margin-top: 1px;
+}
+
+.number-wrapper:before {
+  color: red;
+  content: "\25BC";
+  margin-bottom: 5px;
+  bottom: -.5em;
+} 
+
