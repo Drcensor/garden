@@ -37,6 +37,11 @@ class LoginadminController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+
+    public function adminusername()
+{
+    return 'adminusername';
+}
    
 
     
