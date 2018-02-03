@@ -1,7 +1,9 @@
  <div class="content">
  					 @include ('partials/header')
 		
-<div id="centering">	
+
+<div class="row">
+    <div class="col-sm-3" style="background-color:yellow;">	
            
                
 	               
@@ -9,20 +11,11 @@
 
 							<img id="image1" class="sidebyside"  src="../images/pointsettiasmall.jpg" alt="plant of the pointsettia"/>
 
-							<img id="image2" class="sidebyside" src="../images/hyacinthsmall.jpg" alt="plant of the hyacinth "/>
-
-							<img id="image3" class="sidebyside" src="../images/pansysmall.jpg" alt="plant of the pansy "/>
-
-							<img id="image4" class="sidebyside" src="../images/geraniumsmall.jpg" alt="plant of the geranium "/>
-				</div>
-
-		<div class="outerbox">
-
-						<div class="innerbox">
+							<div class="innerbox">
 						<p class="cen">
 						<strong>Pointsettia</strong><br />
 						a perfect gift for you</p>
-
+					
 					<form method="post" action="../user/products ">
 				      {{csrf_field()}}
                      <input type="hidden" name="id" value="" />
@@ -31,13 +24,17 @@
                      <button type="submit" class="btn btn-danger btn-xs "> put in Basket &#163;5.99 </button> <br />
                     </form>
 																	
-					 </div>
+					 </div></div></div>
 
-						<div class="innerbox">
+	 <div class="col-sm-3" style="background-color:green;">	
+	 						<div class="onebyone">	 	
+							<img id="image2" class="sidebyside" src="../images/hyacinthsmall.jpg" alt="plant of the hyacinth "/>
+
+							<div class="innerbox">
 						<p class="cen">
 						<strong>Hyacinth</strong><br />
 						a perfect gift for you</p>
-
+					
 						<form method="post" action="../user/products ">
 				      {{csrf_field()}}
                      <input type="hidden" name="id" value="" />
@@ -47,9 +44,18 @@
                     </form>
 						
 						
-						</div>
+						
+						</div></div></div>
 
-						<div class="innerbox">
+
+    <div class="col-sm-3" style="background-color:pink;">	
+           
+               
+	               
+				<div class="onebyone">
+							<img id="image3" class="sidebyside" src="../images/pansysmall.jpg" alt="plant of the pansy "/>
+
+							<div class="innerbox">
 						<p class="cen">
 						<strong>Pansy</strong><br />
 						a perfect gift for you</p>
@@ -61,9 +67,15 @@
                      <input class="bigger1" type="hidden" name="quantity"  value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;3.99 </button> <br />
                     </form>
-						</div>
+						</div></div></div>
 
-						<div class="innerbox">
+	
+<div class="col-sm-3" style="background-color:red;">	
+
+							<div class="onebyone">
+							<img id="image4" class="sidebyside" src="../images/geraniumsmall.jpg" alt="plant of the geranium "/>
+
+							<div class="innerbox">
 						<p class="cen">
 						<strong>Geranium</strong><br />
 						a perfect gift for you</p>
@@ -74,21 +86,15 @@
                      <input class="bigger1" type="hidden" name="quantity"  value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;3.99 </button> <br />
                     </form>
-						</div>
+						
+				</div></div></div></div>
 
-		</div>
+		
 
-
+<div class="row">
+    <div class="col-sm-3" style="background-color:orange;">	
 			<div class="onebyone">
 						<img id="image5" class="sidebyside"  src="../images/cyclamensmall.jpg" alt="plant of the cyclamen"/>
-
-						<img id="image6" class="sidebyside" src="../images/spider-plantsmall.jpg" alt="plant of the spider-plant" />
-
-						<img id="image7" class="sidebyside" src="../images/orchidsmall.jpg" alt="plant of the orchid" />
-
-						<img id="image8" class="sidebyside" src="../images/rainbow-rosesmall.jpg" alt="plant of the rainbow-roses "/>
-			</div>
-			<div class="outerbox">
 
 						<div class="innerbox">
 						<p class="cen">
@@ -102,7 +108,15 @@
                      <input class="bigger1" type="hidden" name="quantity"  value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;4.99 </button> <br />
                     </form>
-						</div>
+						</div></div></div>
+
+ <div class="col-sm-3" style="background-color:pink;">	
+           
+               
+	               
+				<div class="onebyone">
+
+						<img id="image6" class="sidebyside" src="../images/spider-plantsmall.jpg" alt="plant of the spider-plant" />
 
 						<div class="innerbox">
 						<p class="cen">
@@ -116,7 +130,16 @@
                      <input class="bigger1" type="hidden" name="quantity"  value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;5.99 </button> <br />
                     </form>
-						</div>
+						</div></div></div>
+
+<div class="col-sm-3" style="background-color:red;">	
+           
+               
+	               
+				<div class="onebyone">
+
+
+						<img id="image7" class="sidebyside" src="../images/orchidsmall.jpg" alt="plant of the orchid" />
 
 						<div class="innerbox">
 						<p class="cen">
@@ -130,7 +153,17 @@
                      <input class="bigger1" type="hidden" name="quantity"  value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;7.99 </button> <br />
                     </form>
-						</div>
+						</div></div></div>
+
+<div class="col-sm-3" ">	
+           
+               
+	               
+				<div class="onebyone">
+
+
+						<img id="image8" class="sidebyside" src="../images/rainbow-rosesmall.jpg" alt="plant of the rainbow-roses "/>
+
 
 						<div class="innerbox">
 						<p class="cen">
@@ -144,9 +177,9 @@
                      <input class="bigger1" type="hidden" name="quantity" min="1" max="5" value="1"/>
                      <button type="submit" class="btn btn-danger btn-xs"> put in Basket &#163;6.99 </button> <br />
                     </form>
-						</div>
-
+						</div></div></div>
 			</div>
+			
 
 </div>
 <hr />

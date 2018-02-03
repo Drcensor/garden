@@ -1,21 +1,4 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Garden') }}</title>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style> body{ background-color: white; } </style>
-    @yield('style')
-</head>
-<body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top"> 
             <div class="container">
@@ -56,8 +39,12 @@
                             <li style="margin-right: 100px"><a href="#">Site Map</a></li>
                         <li>    <a href="form1"><img src="../images/trolly.png"> {{  $baskets }}</a>   </li>
                             <li class="dropdown">
-                               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+                               
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+    <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
+     {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+</a>
+                                   
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -88,6 +75,10 @@
                     @endauth
 
                                     </li>
+
+                                     <li>
+                                            <a href="{{ url('user/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a>
+                                        </li>
                                 </ul>
                             </li>
                         @endguest

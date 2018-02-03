@@ -26,6 +26,7 @@ Route::post('user/accounts', 'homeController@update');
 Route::get('user/edituser', 'HomeController@edit')->name('user/edituser');
 
 
+
 Route::get('user/form1', 'ProductController@index')->name('user/form1');
 
 Route::get('user/product', 'ProductController@link')->name('user/product');
@@ -75,6 +76,13 @@ Route::post('user/form1', 'BasketController@destroy')->name('user/form1');
 Route::post('user/products', 'BasketController@create')->name('user/products');
 
 Route::post('user/form1redirect', 'BasketController@complete')->name('user/form1redirect');
+
+
+Route::post('user/edituser', 'ProfileController@uploads');
+
+Route::get('user/profile', 'ProfileController@profile');
+
+Route::post('user/profile', 'ProfileController@update_avatar');
 
 // Route::get('user/edituser', function () {
 // 	return view('edituser');

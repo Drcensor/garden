@@ -1,21 +1,18 @@
 
 @extends('partials.master')
 
-@section('style')
+@section('style') 
 
    <style>
             body {
 
                 background-color: white
             }
+
             div {
-
-                bor/der: 1px black solid;
+                bord/er: 1px black solid;
             }
-            td {
-
-                color: #000
-            }
+           
             .containers{
                 width:1000px;
                 text-align: center;
@@ -27,6 +24,35 @@
 
 
             .odd input{ background-color:#fff; color: #000; border: 0px;
+            }
+
+            #customers {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+                border: 0px;
+            }
+
+            #customers td, #customers th {
+                border: 0px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #993333;
+                color: white;
+            }
+
+            .table-striped th {
+                background-color: #993333;
+                color: #fff;
             }
 
            

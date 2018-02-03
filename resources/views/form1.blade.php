@@ -4,7 +4,7 @@
 @section('style')
 
    <style>
-                
+            
    </style>
 
 @endsection

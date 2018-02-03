@@ -16,6 +16,12 @@ use DB;
 
 use Carbon\Carbon;
 
+use Illuminate\Support\Facades\Input;
+
+use Illuminate\Support\Facades\File;
+
+use Illuminate\Support\Facades\Storage;
+
 
 
 class HomeController extends Controller
@@ -51,13 +57,13 @@ class HomeController extends Controller
     {
             $users = DB::table('users')->where('id', '=', auth()->id())->latest()->get(); 
             $ordered = DB::table('orders')->where('users_id', '=', auth()->id())->latest()->get();
-          //  $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+           $users_id = 'image'.auth()->id();
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
             ->get();
             
-           return view('accounts', compact(['users', 'ordered', 'products', 'baskets'])  );
+           return view('accounts', compact(['users', 'ordered', 'products', 'baskets', 'users_id'])  );
     }
 
 
@@ -81,10 +87,16 @@ class HomeController extends Controller
 
 
     public function edit() {
-        // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
+       
+         $users = DB::table('users')->where('id', '=', auth()->id())->latest()->get(); 
 
-        return view('edituser', compact('baskets'));
+          $users_id = 'image'.auth()->id();
+
+        return view('edituser', compact(['baskets', 'users_id']));
+
     }
+
+   
     
 
 }

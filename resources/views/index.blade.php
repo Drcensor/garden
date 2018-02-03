@@ -1,6 +1,6 @@
 @extends('partials.master')
 
-@section('style')
+@section('style') 
 
   <style>
 #cookie-law-info-bar {
@@ -59,7 +59,7 @@
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
 }
 
-/*
+
 .large.cli-plugin-button, .large.cli-plugin-button:visited {
 	font-size: 14px;
 	padding: 8px 14px 9px;
@@ -103,7 +103,19 @@
 }
 .yellow.cli-plugin-button:hover {
 	background-color: #fc9200; 
-}*/
+}
+
+.bac {
+
+	background-color: #00ff00;
+	color: #fff;
+}
+
+.bac1 {
+
+	background-color: #3333ff;
+	color: #fff;
+}
 </style>
 
    <link rel="stylesheet" href="../../public/css/multizoom.css" type="text/css" /><!--link for the image enlarger -->
@@ -134,7 +146,12 @@
 
     @include('partials.footer')
 
-    <div id="cookie-law-info-bar"><span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.<a href="#" id="cookie_action_close_header"  class="medium cli-plugin-button cli-plugin-main-button" >Accept</a> </span></div>    
+    <div id="cookie-law-info-bar">
+    	<span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.
+    		<a href="#" id="cookie_action_close_header"  class="medium cli-plugin-button cli-plugin-main-button" >Accept</a>
+    		   </span></div> 
+
+
     <script type="text/javascript">
       //<![CDATA[
       jQuery(document).ready(function() {

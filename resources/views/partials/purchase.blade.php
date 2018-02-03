@@ -6,40 +6,40 @@
 
         </div>
         <div class="panel panel-default">
-          hello
+          <span class="glyphicon glyphicon-envelope"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+         <span class="glyphicon glyphicon-barcode"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+         <span class="glyphicon glyphicon-print"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+          <span class="glyphicon glyphicon-flag"> hello
 
         </div>
          <div class="panel panel-default">
-          hello
+          <span class="glyphicon glyphicon-time"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+         <span class="glyphicon glyphicon-trash"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+          <span class="glyphicon glyphicon-off"> hello
 
         </div>
         <div class="panel panel-default">
-          hello
+          <span class="glyphicon glyphicon-ok"> hello
 
         </div>
    </div>
  <div class="content">
- 					 @include ('partials/header')
+ 					<!-- @include ('partials/header')-->
 		           
 
 	

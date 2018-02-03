@@ -35,9 +35,9 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                   <!--  <ul class="nav navbar-nav">
+                       
+                    </ul> -->
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -47,8 +47,12 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+                               
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
+    <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
+   {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+</a>
+                                   
                                 </a>
 
                                 <ul class="dropdown-menu">
@@ -68,6 +72,11 @@
                                         <a href="{{ route('user/accounts') }}">My Account</a>
 
                                     </li>
+                                   
+                                         <li>
+                                            <a href="{{ url('user/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a>
+                                        </li>
+                                    
                                 </ul>
                             </li>
                         @endguest

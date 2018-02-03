@@ -18,6 +18,7 @@ class CreateUserAdminsTable extends Migration
             $table->string('admin');
             $table->string('username');
             $table->string('password');
+            $table->string('avatar')->default('default.jpg');
             $table->timestamps();
         });
     }
