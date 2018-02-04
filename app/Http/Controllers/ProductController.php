@@ -32,7 +32,7 @@ class ProductController extends Controller
 
           $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('basket', 'products.id', '=', 'basket.product_id')
-            ->get();
+             ->paginate(5);
 
               $users = DB::table('users')->get();
 

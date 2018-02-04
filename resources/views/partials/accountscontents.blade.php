@@ -5,7 +5,7 @@
                    </div>
           
 	                <div class="links">
-                      <h1>Your Accounts Information</h1>
+                      <h1>Your Personal Details</h1>
                      <div class="containers"> 
 
                       <!-- Left-aligned media object -->
@@ -69,7 +69,7 @@
                   </thead>
                   <tbody>
                        <?php $c = 0; ?>
-                     @foreach($products as $purss)
+                     @foreach($products as $purss)<!-- homecontroller -->
 
                     <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
                   <input class="bigger" type="hidden" name="id"  value="{{$purss->id}} readonly "/>   
@@ -86,10 +86,18 @@
                              @endif
                     </td>
                     </tr>
+                   
+               
                       @endforeach
+                      
+
               </tbody>
+
               </table>
+              {{$products->links()}}
+             
             </div>
+           
              
            </div><!-- end of container-->
        </div><!-- end of content-->

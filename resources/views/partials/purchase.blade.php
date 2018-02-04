@@ -232,14 +232,14 @@
 	</div><!--end of form tag -->
     </div><!--end of content tag -->
 
-	<div class="content-right">
+	<div class="content-right >
                         <h3>for your Information</h3>
                      <div class="row secondtwo ">
                          <div class="col-md-11.5 col-md-offset-0.5">
                              <div class="panel panel-default">
                                   <div class="panel-heading">Basket</div>
 
-                                           <div class="panel-body">
+                                           <div class="panel-bod links">
 
                                           
                                          <table class="table table-striped" > 
@@ -293,6 +293,7 @@
                                               </tbody>
                                                             </table>
                                                         
+                                                               {{$products->links()}}
                    
                                                     </div>
                                     

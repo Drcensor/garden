@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\File;
 
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Pagination\LengthAwarePaginator;
+
 
 
 class HomeController extends Controller
@@ -61,7 +63,7 @@ class HomeController extends Controller
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('orders', 'products.id', '=', 'orders.product_id')
-            ->get();
+            ->paginate(5);
             
            return view('accounts', compact(['users', 'ordered', 'products', 'baskets', 'users_id'])  );
     }

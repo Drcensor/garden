@@ -17,6 +17,11 @@ use DB;
 
 use Carbon\Carbon;
 
+
+use Illuminate\Pagination\LengthAwarePaginator;
+
+
+
 class BasketController extends Controller
 {
     /**
@@ -87,9 +92,9 @@ class BasketController extends Controller
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('basket', 'products.id', '=', 'basket.product_id')
-            ->get();
+            ->paginate(5);
           
-            $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
+         //   $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
 
          return view('form1', compact(['ordered', 'baskets', 'products', 'basket']));
 
