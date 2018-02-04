@@ -50,4 +50,8 @@
                         </table>
 
                       
-	                </div></div></div>
+	                </div></div>
+                   <div class="wid">
+                         <a href="adminNewProduct"><button type="submit" class="btn btn-warning" > Create New Product </button></a><br />&nbsp;               
+                   </div>
+                </div>

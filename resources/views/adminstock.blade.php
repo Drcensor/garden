@@ -12,7 +12,7 @@
 
 
 			.odd input{ background-color:#000066; color: #fff; border: 0px;
-			}
+ 			}
 	</style>
 
 @endsection
@@ -27,4 +27,4 @@
 
     @include('partials.adminFooter')
 
-@endsection 
+@endsection

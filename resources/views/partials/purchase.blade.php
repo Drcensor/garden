@@ -1,4 +1,4 @@
-
+ 
  <div class="content-left side-bar">
     <h3>New sideBar</h3>
         <div class="panel panel-default">
@@ -232,8 +232,8 @@
 	</div><!--end of form tag -->
     </div><!--end of content tag -->
 
-	<div class="content-right >
-                        <h3>for your Information</h3>
+	<div class="content-right ">
+                        <h3>Your Basket Choices are Below</h3>
                      <div class="row secondtwo ">
                          <div class="col-md-11.5 col-md-offset-0.5">
                              <div class="panel panel-default">
@@ -241,18 +241,18 @@
 
                                            <div class="panel-bod links">
 
-                                          
+                                         <div class="table-responsive"> 
                                          <table class="table table-striped" > 
                                           
 
                                               <thead>
                                                 
                                                    <tr class="fon">
-                                                      <th class="fon"> Quantity  </th>
+                                                      <th class="fon"> Qty  </th>
                                                       <th> Plant Name </th>
                                                       <th class="hid">Price</th>
                                                       <th> Total Price </th>
-                                                      <th class="hid">Time Purchased</th>
+                                                      <th class="hid">Time Pur-chased</th>
                                                       <th class="hid">Cancel</th>
                                                       <th class="hid">Purchase</th>
                                                    </tr>
@@ -295,7 +295,7 @@
                                                         
                                                                {{$products->links()}}
                    
-                                                    </div>
+                                                    </div></div>
                                     
                                           
 

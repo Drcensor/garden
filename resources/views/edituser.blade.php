@@ -94,6 +94,9 @@
             .links {                
                 width: 95%; 
             }
+            .content {
+               min-height: 500px;
+            }
            
      </style>
 

@@ -30,17 +30,13 @@ class ProductController extends Controller
     {
          $basket = DB::table('basket')->where('users_id', '=', auth()->id())->latest()->get();
 
+           $users = DB::table('users')->get();
+           
           $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('basket', 'products.id', '=', 'basket.product_id')
-             ->paginate(5);
+             ->paginate(3);
 
-              $users = DB::table('users')->get();
-
-             // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
-
-            //  $products = DB::table('products')->where('users_id', '=', auth()->id())
-            // ->join('orders', 'products.id', '=', 'orders.product_id')
-            // ->get();
+            
 
            return view('form1', compact(['basket', 'users','products', 'baskets'])  );
          

@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('user', 'HomeController@index')->name('user');
 
-Route::get('user/accounts', 'HomeController@show')->name('user/accounts');
+Route::get('user/accounts', 'HomeController@show')->name('user/accounts'); 
 
 Route::post('user/accounts', 'homeController@update');
 
@@ -57,6 +57,10 @@ Route::get('user/adminEditUser', 'UserAdminController@editUser' )->name('user/ad
 
 Route::get('user/adminstock', 'UserAdminController@stock' )->name('user/adminstock');
 
+Route::Post('user/adminstock', 'UserAdminController@stockinsert' )->name('user/adminstock');
+
+Route::get('user/adminNewProduct', 'UserAdminController@productstock' )->name('user/adminNewProduct');
+
 
 
 Route::post('user/editproducts', 'OrderController@update');
@@ -75,7 +79,7 @@ Route::post('user/form1', 'BasketController@destroy')->name('user/form1');
 
 Route::post('user/products', 'BasketController@create')->name('user/products');
 
-Route::post('user/form1redirect', 'BasketController@complete')->name('user/form1redirect');
+Route::post('user/form1redirect', 'BasketController@complete')->name('user/form1'); 
 
 
 Route::post('user/edituser', 'ProfileController@uploads');

@@ -58,7 +58,7 @@ class QueryController extends Controller
           
           $update = DB::table('products')->where('id', $_POST['product_id'])->decrement('stock', $_POST['quantity']);  //returning stock to database 
 
-           $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
+          // $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
 
          return view('thankyou', compact(['ordered', 'baskets']));
 

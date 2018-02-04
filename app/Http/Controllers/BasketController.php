@@ -92,7 +92,7 @@ class BasketController extends Controller
 
             $products = DB::table('products')->where('users_id', '=', auth()->id())
             ->join('basket', 'products.id', '=', 'basket.product_id')
-            ->paginate(5);
+            ->paginate(3);
           
          //   $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
 

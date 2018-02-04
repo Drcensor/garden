@@ -66,6 +66,34 @@ class UserAdminController extends Controller
 
         return view('adminstock', compact(['editproducts']));
     }
+
+
+
+      public function productstock()
+    {
+
+        
+        return view('adminNewProduct');
+    }
+
+
+      public function stockinsert()
+    {
+
+         $stockproducts = DB::table('products')->insert(
+             [
+                'plant' => request('plant'),
+                 'description' => request( 'description'),
+                'price' => request('price'),
+                'stock' => request('stock')
+               
+             ]);    //inserting a product to db
+          
+
+         $editproducts = DB::table('products')->latest()->get();
+
+        return view('adminstock', compact(['editproducts']));
+    }
     /**
      * Show the form for creating a new resource.
      *

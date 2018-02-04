@@ -69,7 +69,7 @@
                                     </tbody>
           
                         </table>
-                  </div>
+                  </div></div></div>
                     <div class="wid">
                       <a href="#"  data-toggle="modal" data-target="#myModal" title="Click on the image to change your profile picture!"> 
                        <!--<img src="../storage/{{$users_id}}/ty1.jpg" class="media-object" style="width:100px"> </a>-->
@@ -80,7 +80,7 @@
                                            <a href="accounts"><button type="submit" class="btn btn-warning" > Return to Accounts </button></a><br />&nbsp;               
                                   </div>
 
-                                  <div class="wid1">
+                                 <!--  <div class="wid1">
 
                                       <h1>Upload Your Profile Image</h1>
                                           <form class="picwid" action="{{ URL::to('../user/edituser') }}" method="post" enctype="multipart/form-data">
@@ -89,5 +89,5 @@
                                               <input type="submit" value="Upload" name="submit">
                                             <input type="hidden" value="{{ csrf_token() }}" name="_token">
                                           </form>
-                                  </div>
-                                </di></div></div>
+                                  </div> -->
+                                </di></div></div> 

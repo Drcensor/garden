@@ -4,7 +4,10 @@
 @section('style')
 
    <style>
-            
+     div {
+     	bor/der: 1px red solid
+
+     }       
    </style>
 
 @endsection

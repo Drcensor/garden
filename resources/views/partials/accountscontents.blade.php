@@ -50,7 +50,7 @@
 
                      <div class="links">
 
-                          <h1>Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
+                      <h1 id="C4">Your purchase Information {{$users = Auth::user()->firstname}} {{$users = Auth::user()->lastname}}</h1>
                            
           <div class="containers"> 
 
@@ -94,7 +94,7 @@
               </tbody>
 
               </table>
-              {{$products->links()}}
+                {{$products->links()}}
              
             </div>
            
