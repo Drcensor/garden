@@ -10,7 +10,7 @@
 
                      <div class="containers">
 
-	                	 <h1> Accounts Information of Products (Editing Page)</h1>
+                     <h1> Accounts Information of Products (Editing Page)</h1>
 
                      <table class="table table-striped">
 
@@ -29,18 +29,18 @@
                                        <?php $c = 0; ?>
                                         @foreach($editproducts as $pro)
 
-                                         <form method="post" action="editproducts">
+                                         <form method="post" action="adminproductdelete">
 
                                            {{csrf_field()}}
                                        <tr class="<?=($c++%2==1) ? 'odd' : 'even' ?>">
 
-                      <td><input class="bigger" type="text" name="id"  value="{{$pro->id}}" readonly /> </td>
+                      <td><input class="bigger" type="text" name="id"  value="{{$pro->id}}"  /> </td>
                       <td><input class="bigger" type="text" name="plant"  value="{{$pro->plant}} "/> </td>
                       <td><input class="bigger" type="text" name="description"  value="{{$pro->description}} "/></td>
                        <td><input class="bigger" type="text" name="price"  value="{{$pro->price}} "/> </td>
                       <td><input class="bigger" type="text" name="stock"  value="{{$pro->stock}} "/></td>
                       <td><input class="bigger" type="text" name="created_at"  value="{{$pro->created_at}} "/></td>
-                      <td><button type="submit" class="btn btn-danger" > Edit </button></td>
+                      <td><button type="submit" class="btn btn-danger" > Delete</button></td>
 
                                           </tr>
 
@@ -50,11 +50,10 @@
                         </table>
 
                       
-	                </div>
+                  </div>
 
                 </div>
                    <div class="wid">
-                         <a href="adminNewProduct"><button type="submit" class="btn btn-warning" > Create New Product </button></a>&nbsp;   
-                          <a href="adminDeleteProduct"><button type="submit" class="btn btn-warning" > Delete Product Page </button></a><br />&nbsp;              
+                         <a href="adminstock"><button type="submit" class="btn btn-warning" > return to Product Details </button></a><br />&nbsp;               
                    </div>
                 </div>

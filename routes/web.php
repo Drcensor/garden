@@ -61,6 +61,10 @@ Route::Post('user/adminstock', 'UserAdminController@stockinsert' )->name('user/a
 
 Route::get('user/adminNewProduct', 'UserAdminController@productstock' )->name('user/adminNewProduct');
 
+Route::get('user/adminDeleteProduct', 'UserAdminController@productdelete' )->name('user/adminDeleteProduct');
+
+Route::Post('user/adminproductdelete', 'UserAdminController@adminproductdelete' );
+
 
 
 Route::post('user/editproducts', 'OrderController@update');

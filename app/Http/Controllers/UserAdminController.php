@@ -36,11 +36,9 @@ class UserAdminController extends Controller
     {
          $users = DB::table('users')->get();
 
-       //  $products = $this->show(); 
-
         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
-            ->get();
+            ->paginate(4);
 
         return view('adminpanel', compact(['users','products']));
     }
@@ -62,7 +60,9 @@ class UserAdminController extends Controller
       public function stock()
     {
 
-         $editproducts = DB::table('products')->latest()->get();
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
+
+        
 
         return view('adminstock', compact(['editproducts']));
     }
@@ -90,9 +90,33 @@ class UserAdminController extends Controller
              ]);    //inserting a product to db
           
 
-         $editproducts = DB::table('products')->latest()->get();
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
 
         return view('adminstock', compact(['editproducts']));
+    }
+
+
+    public function productdelete() {
+
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
+
+        return view('adminDeleteProduct', compact(['editproducts']));
+    }
+
+
+     public function adminproductdelete(Request $request) {
+
+        $request->validate([
+
+                'id' => 'required|int',
+                
+        ]);
+
+        $delete = DB::table('products')->where('id', $_POST['id'])->delete();
+
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
+
+        return view('adminDeleteProduct', compact(['editproducts']));
     }
     /**
      * Show the form for creating a new resource.
