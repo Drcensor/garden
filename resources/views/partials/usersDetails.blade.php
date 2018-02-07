@@ -10,7 +10,10 @@
 
                      <div class="containers">
 
-	                	 <h1> Accounts Information of Users</h1><a href="adminpaneledituser"><button type="submit" class="btn btn-danger" > Edit Users </button></a>
+	                	 <h1> Accounts Information of Users</h1>
+
+                     <a href="adminpaneledituser"><button type="submit" class="btn btn-danger" > Edit Users </button></a>
+                      <a href="adminpaneledituser"><button type="submit" class="btn btn-danger" > Delete User </button></a>
 
                       <table class="table table-bordered">
                                     <thead>

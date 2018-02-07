@@ -75,7 +75,7 @@ class OrderController extends Controller
 
         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
-            ->get();
+            ->paginate(7);
             
        return view('adminpurchases', compact(['users','products']));
     }
@@ -112,7 +112,8 @@ class OrderController extends Controller
         ]);
 
 
-         $editproducts = DB::table('products')->latest()->get();  
+         $editproducts = DB::table('products')->latest()
+         ->get();  
 
             return view('adminstock', compact(['updates', 'editproducts']));
     }

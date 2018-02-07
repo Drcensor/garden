@@ -68,6 +68,7 @@ class RegisterController extends Controller
              'lastname' => ucfirst($data['lastname']),
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'avatar' => 'default.jpg',
         ]);
     }
 }

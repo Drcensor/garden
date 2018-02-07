@@ -54,7 +54,9 @@
                   @endforeach
           </tbody>
                         </table>
-
+                         <div class="text-center">
+                         {{$products->links()}}
+                       </div>
                         </div>
                         </div><!-- end of container-->
                         </div><!-- end of content-->

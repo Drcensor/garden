@@ -20,7 +20,7 @@
                                        @foreach($users as $user)                                       
                                          {{csrf_field()}}
 
-                                          @if( date("d/m/Y") >= date('d-m-Y', strtotime(($user->created_at) . '+ 30 day'))  )
+                                          @if( date("d/m/Y") > date('d-m-Y', strtotime(($user->created_at) . '+ 30 day'))  )
 
                                        <tr>
                     	                	    <td>{{$user->firstname}} {{$user->lastname}}</td>
@@ -41,7 +41,7 @@
                      <div class="links">                         
                            <div class="containers">
 
-                           <h1> Purchase Information of Users From The Last 6 Days</h1> 
+                           <h1> Purchase Information of all Users </h1> 
 
                                      <table class="table table-striped" >
                                                   <thead>
@@ -65,7 +65,7 @@
                    
 
                                            {{csrf_field()}}
-                     <!-- @if( date("d/m/Y") <= date('d-m-Y', strtotime(($purss->created_at) . '+ 6 day'))  )-->
+                    
               <tr>
                   <td>{{$purss->id}}  </td> 
                   <td>{{$purss->users_id}}  </td>  
@@ -77,11 +77,13 @@
                  
                 </tr>
                  
-                <!-- @endif-->
+              
                   @endforeach
           </tbody>
                         </table>
+                        <div class="text-center">
                          {{$products->links()}}
+                       </div>
                    <a href="adminpurchases"><button type="submit" class="btn btn-success btn-xs" > Edit Purchases Page </button></a>
 
                         </div>

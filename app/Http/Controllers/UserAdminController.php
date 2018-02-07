@@ -38,6 +38,7 @@ class UserAdminController extends Controller
 
         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->orderBy('users_id', 'asc')
             ->paginate(4);
 
         return view('adminpanel', compact(['users','products']));
@@ -60,7 +61,7 @@ class UserAdminController extends Controller
       public function stock()
     {
 
-         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest() ->paginate(7);
 
         
 
@@ -98,7 +99,7 @@ class UserAdminController extends Controller
 
     public function productdelete() {
 
-         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->get();
+         $editproducts = DB::table('products')->orderBy('id', 'asc')->latest()->paginate(5);
 
         return view('adminDeleteProduct', compact(['editproducts']));
     }
