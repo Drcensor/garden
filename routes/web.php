@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 
+
+Route::get('/2', function () {
+    return view('index2');
+});
+
 Auth::routes();
 
 Route::get('user', 'HomeController@index')->name('user');

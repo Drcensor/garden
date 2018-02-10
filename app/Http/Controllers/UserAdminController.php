@@ -38,6 +38,7 @@ class UserAdminController extends Controller
 
         $products = DB::table('products')
             ->join('orders', 'products.id', '=', 'orders.product_id')
+            ->orderBy('users_id', 'asc')
             ->paginate(4);
 
         return view('adminpanel', compact(['users','products']));
