@@ -20,7 +20,7 @@
                                        @foreach($users as $user)                                       
                                          {{csrf_field()}}
 
-                                          @if( date("d/m/Y") >= date('d-m-Y', strtotime(($user->created_at) . '+ 30 day'))  )
+                                          @if( date("d/m/Y") > date('d-m-Y', strtotime(($user->created_at) . '+ 30 day'))  )
 
                                        <tr>
                     	                	    <td>{{$user->firstname}} {{$user->lastname}}</td>

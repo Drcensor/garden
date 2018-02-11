@@ -48,7 +48,9 @@
                                         @endforeach
                                     </tbody>
                         </table>
-
+                        <div class="text-center">
+                         {{$editproducts->links()}}
+                       </div>
                       
                   </div>
 
