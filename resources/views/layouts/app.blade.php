@@ -53,8 +53,7 @@
    {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
 </a>
                                    
-                                </a>
-
+                               
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ route('logout') }}"
