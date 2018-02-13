@@ -1,166 +1,118 @@
-@extends('partials.master')
-
-@section('style') 
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
-#cookie-law-info-bar {
-	border: 0;
-	font-size: 10pt;
-	margin: 0 auto;
-	padding: 5px 0;
-	position: absolute;
-	text-align: center;
-	width: 100%;
-	z-index: 9999;
-}
-#cookie-law-info-again {
-	font-size: 10pt;
-	margin: 0;
-	padding: 2px 10px;
-	text-align: center;
-	z-index: 9999;
-	cursor: pointer;
-}
-#cookie-law-info-bar span {
-	vertical-align: middle;
-}
-/** Buttons (http://papermashup.com/demos/css-buttons) */
-.cli-plugin-button, .cli-plugin-button:visited {
-	background: #222 url('../images/overlay.png') repeat-x; 
-	display: inline-block;
-	padding: 5px 10px 6px;
-	color: #fff;
-	text-decoration: none;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-	border-bottom: 1px solid rgba(0,0,0,0.25);
-	position: relative;
-	cursor: pointer;
-	margin: auto 10px;
-}
-.cli-plugin-button:hover {
-	background-color: #111;
-	color: #fff;
-}
-.cli-plugin-button:active {
-	top: 1px;
-}
-.small.cli-plugin-button, .small.cli-plugin-button:visited {
-	font-size: 11px;
-}
-.cli-plugin-button, .cli-plugin-button:visited,
-	.medium.cli-plugin-button, .medium.cli-plugin-button:visited {
-	font-size: 13px;
-	font-weight: bold;
-	line-height: 1;
-	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-}
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 { 
+      background-color: #474e5d; /* Dark Blue */
+      color: #ffffff;
+  }
+  .bg-3 { 
+      background-color: #ffffff; /* White */
+      color: #555555;
+  }
+  .bg-4 { 
+      background-color: #2f2f2f; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Me</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">WHO</a></li>
+        <li><a href="#">WHAT</a></li>
+        <li><a href="#">WHERE</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-.large.cli-plugin-button, .large.cli-plugin-button:visited {
-	font-size: 14px;
-	padding: 8px 14px 9px;
-}
-.super.cli-plugin-button, .super.cli-plugin-button:visited {
-	font-size: 34px;
-	padding: 8px 14px 9px;
-}
-.pink.cli-plugin-button, .magenta.cli-plugin-button:visited {
-	background-color: #e22092;
-}
-.pink.cli-plugin-button:hover {
-	background-color: #c81e82;
-}
-.green.cli-plugin-button, .green.cli-plugin-button:visited {
-	background-color: #91bd09;
-}
-.green.cli-plugin-button:hover {
-	background-color: #749a02;
-}
-.red.cli-plugin-button, .red.cli-plugin-button:visited {
-	background-color: #e62727;
-}
-.red.cli-plugin-button:hover {
-	background-color: #cf2525;
-}
-.orange.cli-plugin-button, .orange.cli-plugin-button:visited {
-	background-color: #ff5c00;
-}
-.orange.cli-plugin-button:hover {
-	background-color: #d45500;
-}
-.blue.cli-plugin-button, .blue.cli-plugin-button:visited {
-	background-color: #2981e4;
-}
-.blue.cli-plugin-button:hover {
-	background-color: #2575cf;
-}
-.yellow.cli-plugin-button, .yellow.cli-plugin-button:visited {
-	background-color: #ffb515;
-}
-.yellow.cli-plugin-button:hover {
-	background-color: #fc9200; 
-}
-
-.bac {
-
-	background-color: #00ff00;
-	color: #fff;
-}
-
-.bac1 {
-
-	background-color: #3333ff;
-	color: #fff;
-}
-</style>
-
-   <link rel="stylesheet" href="../../public/css/multizoom.css" type="text/css" /><!--link for the image enlarger -->
-			<link rel="icon"  type="image/jpg"  href="../images/favicon.jpg"/><!-- a link to the favicon image placed in the title above  -->
-			 <link rel="stylesheet" href="<?php echo asset('css/product.css')?>" type="text/css"> 
-				<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js">
-				</script>-->
-				<script type="text/javascript" src="../js/jquery1.min.js"></script>
-				<script type="text/javascript" src="../../js/multizoom.js"></script>
-				<script type="text/javascript" src="../../js/multizoom1.js">
-				</script>
-				
-@endsection 
-
-
-@section('content')
-</div>
-@include('partials.header')
-
-@include('partials.nav')
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h3 class="margin">Who Am I?</h3>
+  <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+  <h3>I'm an adventurer</h3>
 </div>
 
-@include('partials.indexfrontpage')
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <h3 class="margin">What Am I?</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+  <a href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-search"></span> Search
+  </a>
+</div>
 
-@endsection
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="margin">Where To Find Me?</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+    </div>
+  </div>
+</div>
 
-@section('footer')
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+</footer>
 
-    @include('partials.footer')
-
-    <div id="cookie-law-info-bar">
-    	<span>This website uses cookies to improve your experience. We'll assume you're ok with this, but you can opt-out if you wish.
-    		<a href="#" id="cookie_action_close_header"  class="medium cli-plugin-button cli-plugin-main-button" >Accept</a>
-    		   </span></div> 
-
-
-    <script type="text/javascript">
-      //<![CDATA[
-      jQuery(document).ready(function() {
-        cli_show_cookiebar({
-          settings: '{"animate_speed_hide":"500","animate_speed_show":"500","background":"#00aeef","border":"#444","border_on":false,"button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":true,"button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":false,"font_family":"inherit","header_fix":false,"notify_animate_hide":true,"notify_animate_show":false,"notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":false,"scroll_close_reload":false,"showagain_tab":false,"showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#ffffff","show_once_yn":false,"show_once":"10000"}'
-        });
-      });
-      //]]>
-    </script>
-
-@endsection
-
+</body>
+</html>

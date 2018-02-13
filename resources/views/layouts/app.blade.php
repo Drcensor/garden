@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -15,7 +15,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top"> 
+        <nav class="navbar navbar-default navbar-static-top bg-green"> 
             <div class="container">
                 <div class="navbar-header">
 

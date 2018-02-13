@@ -8352,12 +8352,12 @@ button.close {
 
 /*
 div{
-	bor/der:solid #000066 0.5px;
+	border:solid #000066 0.5px;
 	
 }*/
 
 body {
-  background-color: #33cc33;
+  background-color: #b3ffb3;
 }
 
 .bigger1 {
@@ -8370,5 +8370,26 @@ body {
 
 .table-time > tbody > tr:nth-of-type(even) {
   background-color: #000066;
+}
+
+.panel-heading {
+  color: #000 !important;
+  background-color: #80ffe1 !important;
+  padding: 25px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.panel-body {
+  color: #fff !important;
+  background-color: #e6fff9 !important;
+}
+
+.bg-green {
+  background-color: #33cc33;
+  color: #fff;
 }
 

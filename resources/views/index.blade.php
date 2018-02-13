@@ -36,7 +36,7 @@
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container srink">
+  <div class="container ">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
@@ -46,7 +46,7 @@
       <a class="navbar-brand" href="#myPage">Garden Nursery</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right text-center">
           @guest
         <li><a href="/">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
@@ -64,6 +64,7 @@
         <li><a href="/user">DASHBOARD</a></li>
          @endguest
       </ul>
+    
     </div>
   </div>
 </nav>
@@ -84,19 +85,22 @@
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-8" id="wid">
       <h2>Info About Us</h2><br>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      <br>&nbsp;<button class="btn btn-success btn-lg">Get in Touch</button><br>
+      <p></p>
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+     <!--  <span class="glyphicon glyphicon-signal logo"></span> -->
     </div>
   </div>
 </div>
 
-<div class="container-fluid" style="background-color: #336600">
+
+
+<div class="container-fluid bg-green" >
   <div class="row">
    
 
@@ -165,12 +169,12 @@
 </div>
 
 <!-- Container (Services Section) -->
-<div id="services" class="container-fluid text-center">
+<div id="services" class="container-fluid text-center ">
   <h2>SERVICES</h2>
   <h4>What we offer</h4>
   <br>
   <div class="row slideanim">
-    <div class="col-sm-4">
+    <div class="col-sm-4 ">
       <span class="glyphicon glyphicon-tree-deciduous logo-small"></span>
       <h4>BEDDING PLANTS</h4>
       <p>Lorem ipsum dolor sit amet..</p>
@@ -200,7 +204,7 @@
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-blackboard logo-small"></span>
-      <h4 style="color:#303030;">GARDEN TOOLS</h4>
+      <h4 >GARDEN TOOLS</h4>
       <p>Lorem ipsum dolor sit amet..</p>
     </div>
   </div>
@@ -220,16 +224,16 @@
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <p>£280.00</p>
-        <p><strong>New York</strong></p>
-        <p>We built New York</p>
+        <p>£499.00</p>
+        <p><strong>300 Bedding Plants</strong></p>
+        <p>Bought delivered and planted</p>
       </div>
     </div>
     <div class="col-sm-4">
-      <div class="thumbnail">
-        <p>£280.00</p>
-        <p><strong>San Francisco</strong></p>
-        <p>Yes, San Fran is ours</p>
+      <div class="thumbnail" style="color: #000">
+        <p>£80.00</p>
+        <p><strong>5 Garden tools</strong></p>
+        <p>5 garden tools for the Price of 4</p>
       </div>
     </div>
   </div><br>
@@ -258,11 +262,11 @@
 
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
       <span class="sr-only">Previous</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+     <!--  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
       <span class="sr-only">Next</span>
     </a>
   </div>
@@ -305,14 +309,14 @@
           <h1>Average</h1>
         </div>
         <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <p><strong>2</strong> Hours</p>
+          <p><strong>1</strong> Person</p>
+          <p><strong>12"</strong> Lawn Mower</p>
+          <p><strong>4</strong> bags for weeds</p>
+          <p><strong>Free</strong>Quotes</p>
         </div>
         <div class="panel-footer">
-          <h3>£29</h3>
+          <h3>£39</h3>
           <h4>per month</h4>
           <button class="btn btn-lg">Sign Up</button>
         </div>
@@ -326,14 +330,14 @@
           <h1>Premium</h1>
         </div>
         <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
+          <p><strong>2</strong> Hours</p>
+          <p><strong>2</strong> People</p>
+          <p><strong>15"</strong> Lawn Mower</p>
+          <p><strong>8</strong> bags for weeds</p>
+          <p><strong>2</strong> times a month</p>
         </div>
         <div class="panel-footer">
-          <h3>£80</h3>
+          <h3>£99</h3>
           <h4>per month</h4>
           <button class="btn btn-lg">Sign Up</button>
         </div>
@@ -378,7 +382,7 @@
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Not Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">Tyrone's designs lol</a></p>
+  <p>StokeBid designs </p>
 
 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stokebid.com%2F" rel="nofollow" target="_blank" class="button share-on-facebook" title="Share on Facebook"><button type="button" class="btn btn-primary">Facebook</button></a>
 <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.stokebid.com%2F" rel="nofollow" target="_blank" class="button share-on-googleplus" title="Share on Google"><button type="button" class="btn btn-success">Google+</button></stokebid.com>
