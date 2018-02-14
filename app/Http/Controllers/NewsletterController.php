@@ -41,9 +41,9 @@ class NewsletterController extends Controller
     public function store(Request $request)
     {
 
-        $request->validate([
+        $this->validate($request, [
 
-                'email' => 'required|email',
+                'email' => 'required|max:155',
                 
                   ]);
 

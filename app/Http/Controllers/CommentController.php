@@ -10,6 +10,10 @@ use Auth;
 
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Validator; 
+
+use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class CommentController extends Controller
 {
@@ -41,11 +45,11 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-         $request->validate([
+         $this->validate($request, [
 
-            'name' => 'required|name',
-           'email' => 'required|email',
-           'comments' => 'required|comments'
+         'name' => 'required|max:155',
+         'email' => 'required|max:155',
+         'comments' => 'required|max:355',
                 
                   ]);
 

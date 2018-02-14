@@ -300,7 +300,7 @@
                                           
 
                                           <div  class="panel-body">
-                                            All your basket item will be here!
+                                           <p class="cr-bk"> All your basket item will be here!</p>
                                          </div>
 
                                 </div>                 
@@ -344,7 +344,7 @@
                                         </div>
 
                                         <div class="panel-body">
-                                        There are some great bargains to be had!
+                                       <p class="cr-bk"> There are some great bargains to be had!</p>
                                         </div>
                                 </div>               
                             </div>

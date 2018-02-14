@@ -25,15 +25,15 @@
                                     </div>
 
                               <div class="panel-body">
-                                   <a href="user/accounts"><button type="submit" class="btn btn-success btn-xs" > Account </button></a> Do you want to look at your account details <br />
+                                  <p class="cr-bk"> <a href="user/accounts"><button type="submit" class="btn btn-success btn-xs" > Account </button></a> Do you want to look at your account details</p> 
                               </div>
 
                               <div class="panel-body">
-                                   <a href="user/products"><button type="submit" class="btn btn-success btn-xs" > Plants </button></a> Or look at some more plants <br />
+                                   <p class="cr-bk"><a href="user/products"><button type="submit" class="btn btn-success btn-xs" > Plants </button></a> Or look at some more plants </p>
                                   
                              </div>
-                             <div class="panel-body">
-                                    <a href="user/contacts"><button type="submit" class="btn btn-success btn-xs" > Contact </button></a> Do you wish to contact us <br />
+                             <div class="panel-body cr-bk">
+                                   <p class="cr-bk"> <a href="user/contacts"><button type="submit" class="btn btn-success btn-xs" > Contact </button></a> Do you wish to contact us </p>
                                    &nbsp;
                              </div>               
                           </div>
@@ -47,16 +47,10 @@
                              <div class="panel panel-default">
                                   <div class="panel-heading">Your Info Details</div>
 
-                                        <div class="panel-body">
-                   
-                                           You have {{ $orders  }} plant orders.<br />
-                                           You have {{  $baskets }} items in your basket.
-                  
-                                        </div>
-
-                                    <div class="panel-body">
-                                           <a href="user/form1"><button type="submit" class="btn btn-warning btn-xs" > Basket </button></a> Review your items in your basket <br />
-                                   &nbsp;
+                                    <div class="panel-body cr-bk">
+                                       <p class="cr-bk"> You have {{ $orders  }} plant orders.</p>
+                                       <p class="cr-bk"> You have {{  $baskets }} items in your basket.</p>                  
+                                       <p class="cr-bk">  <a href="user/form1"><button type="submit" class="btn btn-warning btn-xs" > Basket </button></a> Review your items in your basket </p>
                                    </div>
                                 </div>                 
                             </div>
