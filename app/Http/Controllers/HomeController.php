@@ -29,7 +29,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class HomeController extends Controller
 {
 
-    protected $price;
+    //protected $price;
     /**
      * Create a new controller instance.
      *

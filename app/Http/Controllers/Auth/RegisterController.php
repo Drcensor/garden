@@ -70,5 +70,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'avatar' => 'default.jpg',
         ]);
+
+        
     }
 }

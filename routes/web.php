@@ -97,6 +97,11 @@ Route::get('user/profile', 'ProfileController@profile');
 
 Route::post('user/profile', 'ProfileController@update_avatar');
 
+
+Route::post('/sub', 'NewsletterController@store');
+
+Route::post('/email', 'CommentController@store');
+
 // Route::get('user/edituser', function () {
 // 	return view('edituser');
 // });

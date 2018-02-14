@@ -72,14 +72,24 @@
 <div class="jumbotron text-center">
   <h1>The Garden Nursery</h1> 
   <p>We specialize in Bedding Plants</p> 
-  <form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="For our News Letter Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button> 
-      </div>
-    </div>
-  </form>
+
+
+   
+
+         <form method="POST" action="/sub">
+    {{ csrf_field() }}
+    
+       <div class="input-group">
+           <input type="email" name="email" class="form-control" size="155" placeholder="For our News Letter Email Address" required>
+              
+            <div class="input-group-btn">
+            <button type="submit" class="btn btn-danger">Subscribe</button>
+         </div>      
+       </div> 
+    </form>
+
+
+  
 </div>
 
 <!-- Container (About Section) -->
@@ -356,21 +366,28 @@
       <p><span class="glyphicon glyphicon-phone"></span> +00 7515151515</p>
       <p><span class="glyphicon glyphicon-envelope"></span> enquires@gardennursey.com</p>
     </div>
+
     <div class="col-sm-7 slideanim">
+
+      <form method="POST" action="/email">
+    {{ csrf_field() }}
       <div class="row">
         <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text"  required>
         </div>
         <div class="col-sm-6 form-group">
           <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
         </div>
       </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" type="text" rows="5"></textarea><br>
       <div class="row">
         <div class="col-sm-12 form-group">
           <button class="btn btn-default pull-right" type="submit">Send</button>
         </div>
       </div>
+    </form>
+
+
     </div>
   </div>
 </div>

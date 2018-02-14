@@ -71,10 +71,22 @@ input {
     width:100%;
     min-width:280px;
     height:10%;  
-    background-color:#949470;   
+    background-color:#949470;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;   
 }
             
-
+#copy {
+    padding-top:60px;
+   font-size: 20px;
+    text-align: center;
+    color: #fff;    
+}
+#footer a {  
+    text-decoration: none;
+    color: #fff;   
+}
 #media{
     float:right;
     height:60px;
