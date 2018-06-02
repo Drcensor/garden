@@ -96,7 +96,7 @@ class BasketController extends Controller
           
          //   $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();             
 
-         return view('form1', compact(['ordered', 'baskets', 'products', 'basket']));
+         return view('basket', compact(['ordered', 'baskets', 'products', 'basket']));
 
     }
 
@@ -179,6 +179,6 @@ class BasketController extends Controller
  
         $baskets = DB::table('basket')->where('users_id', '=', auth()->id())->count();
 
-        return view('form1', compact('delete','products', 'basket', 'baskets'));
+        return view('basket', compact('delete','products', 'basket', 'baskets'));
     }
 }

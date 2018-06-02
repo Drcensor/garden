@@ -3,20 +3,24 @@
 namespace App\Http\Controllers;
 
 
-
+use App\Http\Controllers\Auth;
 use App\Mail\Newsletter;
 use App\User;
-use Auth;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class NewsletterController extends Controller
 {
+
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         //
@@ -43,28 +47,76 @@ class NewsletterController extends Controller
 
         $this->validate($request, [
 
-                'email' => 'required|max:155',
+                'email' => 'required|max:155', 
+                
+                  ]);
+
+         $email = $_POST['email'];
+        
+         $result = DB::table('newsletters')->where( 'email', '=', $email)->count();
+    
+         if($result = 0){
+                 $news = DB::table('newsletters')->insert(
+                     [
+                        'users_id' => auth()->id(),
+                        'email' => request('email'),
+                       
+                     ]);    //inserting a newsletter to db 
+               
+                  $id = Auth::id();
+
+                  $user = User::find($id);
+
+
+                  //  \Mail::to($user)->send(new Newsletter);
+                    
+                    session()->flash('message', 'Thank you for your email!'); 
+
+                  return view('index');
+    
+     }else{
+         
+                   session()->flash('message', 'you have already given your email!'); 
+
+                   return back();
+           }
+
+}
+
+
+     public function newsStore(Request $request)
+    {
+
+        $this->validate($request, [
+
+                'email' => 'required|max:155', 
                 
                   ]);
 
 
-        $news = DB::table('newsletters')->insert(
-             [
-                'users_id' => auth()->id(),
-                'email' => request('email'),
-               
-             ]);    //inserting a newsletter to db
-       
-        $id = Auth::id();
+          $email = $request['email'];
 
-        $user = User::find($id);
+          $result = DB::table('newsletters')->where( 'email', '=', $email)->count();   
 
+          if($result == 0){
 
-        \Mail::to($user)->send(new Newsletter);
+                  $news = DB::table('newsletters')->insert(
+                      [
+                         'users_id' => 0,
+                         'email' => request('email'),
+                       
+                      ]);
 
-          return view('index');
-    }
+                     session()->flash('message', 'Thank you for your email!');  
+                
+                      return back();
 
+           }else{
+
+                    session()->flash('message', 'you have already given your email!');   
+                    return back();
+          }
+}
     /**
      * Display the specified resource.
      *
@@ -73,7 +125,7 @@ class NewsletterController extends Controller
      */
     public function show(Newsletter $newsletter)
     {
-        //
+        return view('test');
     }
 
     /**

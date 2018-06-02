@@ -23,3 +23,4 @@ mix.sass('resources/assets/sass/multizoom.scss', 'public/css');
 mix.sass('resources/assets/sass/product.scss', 'public/css');
 mix.sass('resources/assets/sass/formMedia.scss', 'public/css');
 mix.sass('resources/assets/sass/company.scss', 'public/css');
+mix.sass('resources/assets/sass/admin.scss', 'public/css');

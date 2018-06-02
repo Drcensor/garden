@@ -16,7 +16,7 @@ input {
 
 @section('content')
 
-@include('partials.usersDetails')
+@include('partials.searchuserdelete')
 
 @endsection
 
@@ -25,3 +25,4 @@ input {
     @include('partials.adminFooter')
 
 @endsection
+

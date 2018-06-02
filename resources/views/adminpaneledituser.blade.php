@@ -1,4 +1,4 @@
-@extends('layouts.nav')
+@extends('layouts.admin')
 
 @section('style')
 
@@ -11,8 +11,8 @@
 			 }
 
 
-			.odd input{ background-color:#000066; color: #fff; border: 0px;
-			}
+			.odd input{ background-color:#fff; color: #000; border: 0px;
+			} 
 	</style>
 
 @endsection

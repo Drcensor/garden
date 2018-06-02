@@ -1,9 +1,14 @@
 </div>
  <div class="content">
+                    @include('partials/sidenavbar')
 
 	                <div class="links">
 
                   <div class="containers">
+
+                    <div class="col-md-8 col-md-offset-3">
+                       <div class="panel panel-default">
+                <div class="panel-heading"><h1> Accounts: Information of New Users Less Than a Month Old</h1></div>
 
 	                	 <h1> Accounts: Information of New Users Less Than a Month Old</h1>
 
@@ -20,7 +25,7 @@
                                        @foreach($users as $user)                                       
                                          {{csrf_field()}}
 
-                                          @if( date("d/m/Y") > date('d-m-Y', strtotime(($user->created_at) . '+ 30 day'))  )
+                                          @if( date("y-m-d") < date('y-m-d', strtotime(($user->created_at) . '+ 30 day'))  )
 
                                        <tr>
                     	                	    <td>{{$user->firstname}} {{$user->lastname}}</td>
@@ -34,12 +39,17 @@
                                     </tbody>
                         </table>
                         <a href="adminpaneledituser"><button type="submit" class="btn btn-success btn-xs" > Edit Users Page </button></a>
+                      </div>
 	                  </div>
                     </div>
 
 
                      <div class="links">                         
                            <div class="containers">
+
+                            <div class="col-md-8 col-md-offset-3">
+                               <div class="panel panel-default">
+                <div class="panel-heading bg-blues"><h1> Purchase Information of all Users </h1></div>
 
                            <h1> Purchase Information of all Users </h1> 
 
@@ -84,11 +94,13 @@
                         <div class="text-center">
                          {{$products->links()}}
                        </div>
-                   <a href="adminpurchases"><button type="submit" class="btn btn-success btn-xs" > Edit Purchases Page </button></a>
 
+                   <a href="adminpurchases"><button type="submit" class="btn btn-success btn-xs" > Edit Purchases Page </button></a>
+                        </div>
                         </div>
                         </div><!-- end of container-->
-                        </div><!-- end of content-->
+                        </div><!--end of content--> </div>
+                        <hr />
 
 
           

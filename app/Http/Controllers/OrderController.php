@@ -49,6 +49,20 @@ class OrderController extends Controller
         //
     }
 
+    public function searchUser(Request $request)
+    {
+            $request->validate([
+                'search' => 'required|string|max:25', 
+            ]);
+
+        $users = DB::table('users')
+                        ->where('firstname', 'like', request('search') . '%')
+                        ->get();
+
+        
+        return view('admin/allUsers', compact('users'));
+    }
+
     /**
      * Display the specified resource.
      *
@@ -90,8 +104,6 @@ class OrderController extends Controller
     public function update()
     {
 
-         
-
          $_POST['id'];
 
          $updates =  DB::table('products')
@@ -111,11 +123,10 @@ class OrderController extends Controller
            
         ]);
 
+              $editproducts = DB::table('products')->orderBy('id', 'asc')->latest() ->paginate(7);
+         // $editproducts = DB::table('products')->latest()->get();  
 
-         $editproducts = DB::table('products')->latest()
-         ->get();  
-
-            return view('adminstock', compact(['updates', 'editproducts']));
+            return view('adminstock', compact(['editproducts']));
     }
 
     /**

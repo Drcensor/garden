@@ -9,7 +9,7 @@
 
                       <div class="col-md-9 col-md-offset-3 "> 
                      <div class="panel panel-default">
-                <div class="panel-heading"><h1> Accounts Information: Search &amp; Edit Users</h1></div>
+                <div class="panel-heading"><h1>Edit User</h1></div>
                  <div class="panel-body">
                 <form class="example" method="get" action="/action_page_edit" style="max-width:300px">
                         <input type="text" placeholder="Search.." name="search">
@@ -21,7 +21,7 @@
                          </div> 
 	                	 
 
-                      <table class="table table-striped">
+                      <table class="table table-striped"> 
                                     <thead>
                                       <tr>
                                         <th>User Id</th>
@@ -37,7 +37,7 @@
                                        <?php $c = 0; ?>
                                        @foreach($users as $user)
 
-                                        <form method="post" action="adminpaneledituser">  
+                                        <form method="post" action="user/adminpaneledituser">  
 
                                            {{csrf_field()}}
 
@@ -48,7 +48,7 @@
                     	                      <td><input class="bigger4" type="text" name="email"  value="{{$user->email}}" /> </td>
                                              <td><input class="bigger1" type="text" name="admin"  value="{{$user->admin}} "/> </td>
                     	                       <td><input class="bigger" type="text" name="created_at"  value="{{$user->created_at}}" /> </td>
-                                           <!--  <td><button type="submit" class="btn btn-danger" > Edit </button></td> -->
+                                            <td><button type="submit" class="btn btn-danger" > Edit </button></td>
 
                                           </tr>
                                          </form>

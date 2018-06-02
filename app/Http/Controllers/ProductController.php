@@ -38,7 +38,7 @@ class ProductController extends Controller
 
             
 
-           return view('form1', compact(['basket', 'users','products', 'baskets'])  );
+           return view('basket', compact(['basket', 'users','products', 'baskets'])  );
          
         //return view('form1');
     }

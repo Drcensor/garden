@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -10,12 +10,23 @@
 
     <title>{{ config('app.name', 'Garden') }}</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+
+
+
+    <style>
+
+    </style>
+      @yield('style')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top bg-green">  
+        <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -28,16 +39,16 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}"> 
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Garden') }}
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                   <!--  <ul class="nav navbar-nav">
-                       
-                    </ul> -->
+                    <ul class="nav navbar-nav">
+                        &nbsp;
+                    </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -47,13 +58,10 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
-                               
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
-    <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
-   {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
-</a>
-                                   
-                               
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                                   Administrator : {{ Auth::user()->firstname }} {{ Auth::user()->lastname }} <span class="caret"></span>
+                                </a>
+
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -66,16 +74,27 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+
                                     <li>
-
-                                        <a href="{{ route('user/accounts') }}">My Account</a>
-
+                                         <a href="{{ route('user/adminpanel') }}">Main Page </a>
                                     </li>
+                                    <li>
+                                         <a href="{{ route('user/adminpanelCharts') }}">Account Charts</a>
+                                    </li>
+
+                                    <li>
+                                         <a href="{{ route('user/adminEditUser') }}">All Users / Edit</a>
+                                    </li>
+
+                                    <li>
+                                         <a href="{{ route('user/adminpurchases') }}">All Purchases/ Edit</a>
+                                    </li> 
+
+                                    <li>
+                                         <a href="{{ route('user/adminstock') }}">Product Stock</a>
+                                    </li>                                  
+
                                    
-                                         <li>
-                                            <a href="{{ url('user/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a>
-                                        </li>
-                                    
                                 </ul>
                             </li>
                         @endguest
@@ -85,9 +104,11 @@
         </nav>
 
         @yield('content')
+
+         @yield('footer')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script> 
 </body>
 </html>

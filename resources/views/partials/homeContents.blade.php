@@ -28,7 +28,7 @@
                                   <p class="cr-bk"> <a href="user/accounts"><button type="submit" class="btn btn-success btn-xs" > Account </button></a> Do you want to look at your account details</p> 
                               </div>
 
-                              <div class="panel-body">
+                              <div class="panel-body"> 
                                    <p class="cr-bk"><a href="user/products"><button type="submit" class="btn btn-success btn-xs" > Plants </button></a> Or look at some more plants </p>
                                   
                              </div>
@@ -50,7 +50,7 @@
                                     <div class="panel-body cr-bk">
                                        <p class="cr-bk"> You have {{ $orders  }} plant orders.</p>
                                        <p class="cr-bk"> You have {{  $baskets }} items in your basket.</p>                  
-                                       <p class="cr-bk">  <a href="user/form1"><button type="submit" class="btn btn-warning btn-xs" > Basket </button></a> Review your items in your basket </p>
+                                       <p class="cr-bk">  <a href="user/basket"><button type="submit" class="btn btn-warning btn-xs" > Basket </button></a> Review your items in your basket </p>
                                    </div>
                                 </div>                 
                             </div>
@@ -62,7 +62,7 @@
                      <div class=" row">
                          <div class="col-md-8 col-md-offset-2">
                              <div class="panel panel-default">
-                                  <div class="panel-heading">Offers</div>
+                                  <div class="panel-heading">Offers</div> 
 
                                         <div class="panel-body">
                    

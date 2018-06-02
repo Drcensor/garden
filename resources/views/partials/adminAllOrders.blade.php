@@ -1,9 +1,13 @@
 </div> 
  <div class="content">
-<div class="links">                         
+   
+                   @include('partials/sidenavbar')
+                            <div class="links">                         
                            <div class="containers">
-
-                           <h1> Purchase Information of Users (delete Page)</h1>
+                            <div class="col-md-9 col-md-offset-3 ">
+                                <div class="panel panel-default">
+                                   <div class="panel-heading"><h1>Purchase Information of Users (delete Page)</h1></div>
+                         
 
                                      <table class="table table-striped" >
                                                   <thead>
@@ -35,7 +39,7 @@
                   <td><input class="bigger1" type="text" name="id"  value="{{$purss->id}} "/> </td> 
                   <td><input class="bigger1" type="text" name="user_id"  value="{{$purss->users_id}} "/> </td>  
                   <td><input class="bigger1" type="text" name="quantity"  value="{{$purss->quantity}} "/></td>
-                  <td><input class="bigger" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
+                  <td><input class="bigger3" type="text" name="plant"  value="{{ $purss->plant }}"/> </td>
                   <td><input class="bigger1" type="text" name="price" value="£ {{ $purss->price  }}"/></td>
                    <td><input class="bigger1" type="text" name="price" value="£ {{$purss->quantity * $purss->price  }}"/></td>
                   <td class ="table-time">{{$users = date('d-m-Y', strtotime($purss->created_at)) }}</td>
@@ -60,3 +64,6 @@
                         </div>
                         </div><!-- end of container-->
                         </div><!-- end of content-->
+                      </div>
+                    </div>
+                    <hr>

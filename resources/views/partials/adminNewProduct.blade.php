@@ -1,16 +1,15 @@
 </div>
  <div class="content">
 
-		           
-
-
+		            @include('partials/sidenavbar')
 	                <div class="links">
-
-                     
-
+                    
                      <div class="containers">
 
-	                	 <h1> Create a New Product</h1>
+                      <div class="col-md-9 col-md-offset-3">
+                     <div class="panel panel-default">
+                <div class="panel-heading"><h1> Create a New Product</h1></div>
+	                	 
 
                      <table class="table table-striped">
 
@@ -26,7 +25,7 @@
 
                                     <tbody>
                                       
-                                         <form method="post" action="adminstock">
+                                         <form method="post" action="adminNewProduct">
 
                                            {{csrf_field()}}
                                        <tr>
@@ -47,8 +46,9 @@
                         </table>
 
                       
-	                </div></div>
+	                </div>
                    <div class="wid">
                          <a href="adminstock"><button type="submit" class="btn btn-warning" > return to Product Details </button></a><br />&nbsp;               
-                   </div>
+                   </div></div>
                 </div>
+              </div>

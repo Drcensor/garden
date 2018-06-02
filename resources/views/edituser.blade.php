@@ -37,6 +37,11 @@
                 float: right;
                 width: 90%;               
             }
+            
+             .table1 {
+                float: left;
+                width: 11.5%;               
+            }
 
            
            
@@ -69,7 +74,34 @@
                 background-color: #993333;
                 color: white;
             }
+            
+            #customers1 tr input { background-color:#fff; color: #000; border: 0px;
+            }
+          
 
+            #customers1 {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                
+                border: 0px;
+            }
+
+            #customers1 td, #customers th {
+                border: 0px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers1 tr:nth-child(even){background-color: #f2f2f2;}
+
+            #customers1 tr:hover {background-color: #ddd;}
+
+            #customers1 th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #336600;
+                color: white;
+            }
              
 
             .media-left {               
@@ -85,6 +117,7 @@
             .wid {
                 width: 100%;
                 margin: auto;
+                 min-height: 200px;
             }
 
             .modal-content {               
@@ -112,6 +145,6 @@
 
 @section('footer')
 
-    @include('partials.footer')
+  @include('partials.footer')
 
 @endsection

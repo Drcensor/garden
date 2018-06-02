@@ -33,14 +33,14 @@
                         @else
 
                          <li><a href="products">Product</a></li>
-                            <li><a href="form1">Order Page </a></li>
+                            <li><a href="basket">Order Page </a></li>
                             <li><a href="#">About Us</a></li>
                             <li><a href="#">contact Us</a></li>
                             <li style="margin-right: 100px"><a href="#">Site Map</a></li>
                            <!--  <li><a href="form1"><img src="../images/trolly.png"> {{  $baskets }}</a>   </li> -->
-                            <li><a href="form1" class="btn btn-success btn-lg">
+                            <li><a href="basket" class="btn btn-success btn-lg"> 
                                  <span class="glyphicon glyphicon-shopping-cart"></span> {{  $baskets }} in Basket </a></li>
-                            <li class="dropdown">
+                            <li class="dropdown ">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
                                  style="position:relative; padding-left:50px;">
                                 

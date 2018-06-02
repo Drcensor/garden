@@ -16,7 +16,7 @@ input {
 
 @section('content')
 
-@include('partials.usersDetails')
+@include('partials.searchuseredit')
 
 @endsection
 

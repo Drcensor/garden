@@ -68,16 +68,21 @@
     </div>
   </div>
 </nav>
+          @if ($flash = session('message'))
+           <div class="alert alert-success" role="alert" style="position: absolute; top:200px; z-index: 10; height:40px; width:30%;">
+                <strong>{{ $flash }}</strong>
+           </div>
 
+           @endif
 <div class="jumbotron text-center">
   <h1>The Garden Nursery</h1> 
-  <p>We specialize in Bedding Plants</p> 
+  <p>We specialize in Bedding Plants</p>  
 
 
    
-
-         <form method="POST" action="/sub">
-    {{ csrf_field() }}
+    @guest
+         <form method="POST" action="/sub2">
+           {{ csrf_field() }}
     
        <div class="input-group">
            <input type="email" name="email" class="form-control" size="155" placeholder="For our News Letter Email Address" required>
@@ -88,6 +93,21 @@
        </div> 
     </form>
 
+      @else
+      <form method="POST" action="/sub">
+        {{ csrf_field() }}
+        
+           <div class="input-group">
+               <input type="email" name="email" class="form-control" size="155" placeholder="For our News Letter Email Address" required>
+                  
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-danger" >Subscribe</button>          
+                </div>      
+           </div> 
+       </form>
+
+     @endguest
+
 
   
 </div>
@@ -97,6 +117,12 @@
   <div class="row">
     <div class="col-sm-8" id="wid">
       <h2>Info About Us</h2><br>
+
+            <form class="example" action="/action_page.php" style="max-width:300px">
+                <input type="text" placeholder="Search.." name="search2">
+                <button type="submit" class="fa fa-search btn btn-danger">Search</button>
+            </form>
+
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <br>&nbsp;<button class="btn btn-success btn-lg">Get in Touch</button><br>
@@ -126,7 +152,7 @@
     </ol>
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" style="width:100%; height: 500px;">
 
       <div class="item active">
         <img src="../images/pointsettial.jpg" alt="Los Angeles" style="width:100%;">
@@ -381,7 +407,7 @@
       </div>
       <textarea class="form-control" id="comments" name="comments" placeholder="Comment" type="text" rows="5"></textarea><br>
       <div class="row">
-        <div class="col-sm-12 form-group">
+        <div class="col-sm-12 form-group"> 
           <button class="btn btn-default pull-right" type="submit">Send</button>
         </div>
       </div>
@@ -399,7 +425,7 @@
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>StokeBid designs </p>
+  <p><a href=" {{  route('loginAdmin') }}">StokeBid designs</a></p>
 
 <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.stokebid.com%2F" rel="nofollow" target="_blank" class="button share-on-facebook" title="Share on Facebook"><button type="button" class="btn btn-primary">Facebook</button></a>
 <a href="https://plus.google.com/share?url=https%3A%2F%2Fwww.stokebid.com%2F" rel="nofollow" target="_blank" class="button share-on-googleplus" title="Share on Google"><button type="button" class="btn btn-success">Google+</button></stokebid.com>

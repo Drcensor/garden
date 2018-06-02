@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"> 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
